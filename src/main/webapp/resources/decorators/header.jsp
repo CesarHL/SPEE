@@ -2,7 +2,7 @@
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:decorator="http://www.opensymphony.com/sitemesh/decorator" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:s="/struts-tags" xmlns:sj="/struts-jquery-tags" xmlns:log="http://jakarta.apache.org/taglibs/log-1.0">
     <jsp:directive.page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" />
 
-    <s:set var="usuario" value="%{#session[@mx.ipn.escom.cdt.util.action.NombreObjetosSesion@USUARIO_SESION]}" />
+    <s:set var="usuario" value="%{#session[@mx.ipn.escom.spee.action.NombreObjetosSesion@USUARIO_SESION]}" />
     <s:set var="varSUBDIRECTOR" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@SUBDIRECTOR.getValor()}" />
  	<s:set var="varCELEX" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ADMINISTRADOR_CELEX.getValor()}" />
  	<s:set var="varDENTALES" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ADMINISTRADOR_DENTALES.getValor()}" />

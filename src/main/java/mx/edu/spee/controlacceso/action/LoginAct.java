@@ -7,12 +7,10 @@ import org.apache.struts2.convention.annotation.Results;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import com.opensymphony.xwork2.ActionSupport;
-
 import mx.edu.spee.controlacceso.bs.LoginBs;
 import mx.edu.spee.controlacceso.exception.UserNotFoundException;
 import mx.edu.spee.example.action.MenuAct;
+import mx.ipn.escom.spee.action.GeneralActionSupport;
 import mx.ipn.escom.spee.action.NombreObjetosSesion;
 import mx.ipn.escom.spee.action.SessionManager;
 import mx.ipn.escom.spee.controlacceso.mapeo.Usuario;
@@ -21,7 +19,7 @@ import mx.ipn.escom.spee.controlacceso.mapeo.Perfil.PerfilUsuarioEnum;
 @Namespace("/control-acceso")
 @AllowedMethods({ "cambiarMenu", "welcome" })
 @Results({ @Result(name = MenuAct.MENU, type = "redirectAction", params = { "actionName", "%{action}" }) })
-public class LoginAct extends ActionSupport {
+public class LoginAct extends GeneralActionSupport {
 
 	protected static final String WELCOME = "welcome";
 
@@ -54,7 +52,7 @@ public class LoginAct extends ActionSupport {
 	public static final String MENU = "menu";
 
 	public String index() {
-		return "index";
+		return INDEX;
 	}
 
 	public void validateCreate() {

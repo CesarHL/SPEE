@@ -52,18 +52,7 @@ public class LoginBs {
 	public List<Perfil> llenarPerfiles() {
 		List<Perfil> listaPerfiles = new ArrayList<>();
 		listaPerfiles
-				.add(new Perfil(1, "Secretaria de adminisitración", "Secretaria de adminisitración", "S.A.", true));
-		listaPerfiles.add(
-				new Perfil(2, "Coordinación de control escolar", "Coordinación de control escolar", "C.C.E.", true));
-		listaPerfiles.add(new Perfil(3, "Asistente para la secretaria de administración",
-				"Asistente para la secretaria de administración", "A.S.A.", true));
-		listaPerfiles.add(new Perfil(4, "Aspirante", "Aspirante", "AS", true));
-		listaPerfiles.add(new Perfil(5, "Profesor", "Profesor", "PR", true));
-		listaPerfiles
-				.add(new Perfil(6, "Responsable de control escolar", "Responsable de control escolar", "R.C.E.", true));
-		listaPerfiles.add(new Perfil(7, "Psicólogo", "Psicólogo", "PS", true));
-		listaPerfiles.add(new Perfil(8, "Coordinador de psicólogos", "Coordinador de psicólogos", "C.P.", true));
-		listaPerfiles.add(new Perfil(9, "Contador", "Contador", "C.", true));
+				.add(new Perfil(1, "Subdirector Administrativo", "Subdirector Administrativo", "S.A.", true));
 		return listaPerfiles;
 	}
 
@@ -75,15 +64,7 @@ public class LoginBs {
 	 */
 	public List<Usuario> llenarUsuarios() {
 		List<Usuario> listaUsuarios = new ArrayList<>();
-		listaUsuarios.add(new Usuario(1, "secretaria_administracion@eld.ipn.mx", "Passw0rd!"));
-		listaUsuarios.add(new Usuario(2, "coordinacion_control_escolar@eld.ipn.mx", "Passw0rd!"));
-		listaUsuarios.add(new Usuario(3, "asistente_secretaria_administracion@eld.ipn.mx", "Passw0rd!"));
-		listaUsuarios.add(new Usuario(4, "aspirante@eld.ipn.mx", "Passw0rd!"));
-		listaUsuarios.add(new Usuario(5, "profesor@eld.ipn.mx", "Passw0rd!"));
-		listaUsuarios.add(new Usuario(6, "responsable_control_escolar@eld.ipn.mx", "Passw0rd!"));
-		listaUsuarios.add(new Usuario(7, "psicologo@eld.ipn.mx", "Passw0rd!"));
-		listaUsuarios.add(new Usuario(8, "coordinador_psicologos@eld.ipn.mx", "Passw0rd!"));
-		listaUsuarios.add(new Usuario(9, "contador@eld.ipn.mx", "Passw0rd!"));
+		listaUsuarios.add(new Usuario(1, "subdirector_administrativo@ipn.mx", "123"));
 		return listaUsuarios;
 	}
 

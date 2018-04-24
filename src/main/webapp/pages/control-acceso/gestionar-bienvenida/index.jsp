@@ -5,32 +5,19 @@
 		contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" />
 	<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<!-- Head -->
 </head>
 <body>
-	<!-- Usuario en sesion -->
-	<s:set var="usuario"
-		value="%{#session[@mx.ipn.escom.cdt.util.action.NombreObjetosSesion@USUARIO_SESION]}" />
-	<!-- Perfiles que se encuentran en el sistema -->
-	<s:set var="varSA"
-		value="%{@mx.ipn.escom.cdt.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@SECRETARIA_DE_ADMINISTRACION.getValor()}" />
-	<s:set var="varCCE"
-		value="%{@mx.ipn.escom.cdt.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@COORDINACION_CONTROL_ESCOLAR.getValor()}" />
-	<s:set var="varASA"
-		value="%{@mx.ipn.escom.cdt.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ASISTENTE_S_A.getValor()}" />
-	<s:set var="varAS"
-		value="%{@mx.ipn.escom.cdt.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ASPIRANTE.getValor()}" />
-	<s:set var="varPR"
-		value="%{@mx.ipn.escom.cdt.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@PROFESOR.getValor()}" />
-	<s:set var="varRCE"
-		value="%{@mx.ipn.escom.cdt.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@RESPONSABLE_CONTROL_ESCOLAR.getValor()}" />
-	<s:set var="varPS"
-		value="%{@mx.ipn.escom.cdt.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@PSICOLOGO.getValor()}" />
-	<s:set var="varCP"
-		value="%{@mx.ipn.escom.cdt.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@COORDINADOR_PSICOLOGO.getValor()}" />
-	<s:set var="varCONT"
-		value="%{@mx.ipn.escom.cdt.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@CONTADOR.getValor()}" />
-
+	<s:set var="usuario" value="%{#session[@mx.ipn.escom.spee.action.NombreObjetosSesion@USUARIO_SESION]}" />
+    <s:set var="varSUBDIRECTOR" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@SUBDIRECTOR.getValor()}" />
+ 	<s:set var="varCELEX" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ADMINISTRADOR_CELEX.getValor()}" />
+ 	<s:set var="varDENTALES" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ADMINISTRADOR_DENTALES.getValor()}" />
+ 	<s:set var="varBIBLIOTECA" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ADMINISTRADOR_BIBLIOTECA.getValor()}" />
+ 	<s:set var="varFOTOCOPIADO" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ADMINISTRADOR_FOTOCOPIADO.getValor()}" />
+ 	<s:set var="varCAJERO" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ENCARGADO_CAJA.getValor()}" />
+ 	<s:set var="varCONTADOR" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ALUMNO.getValor()}" />
+ 	<s:set var="varTRABAJADOR" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@TRABAJADOR.getValor()}" />
+ 	<s:set var="varEXTERNO" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@EXTERNO.getValor()}" />
+ 	
 	<div class="row title">
 		<div class="col-md-12">
 			<h1 class="title">
@@ -44,71 +31,69 @@
 			<s:actionmessage cssClass="alert alert-success" />
 		</div>
 	</div>
-
-	<!-- Formulario Login -->
+	
 	<div class="outter-section form form-medium">
-
-		<s:if test="#usuario.perfilActivo.id == #varSA">
+		<s:if test="#usuario.perfilActivo.id == #varSUBDIRECTOR">
 			<s:text name="IU1A_LABEL1">
 				<s:param>
-					secretaría de administración
+					subdirector
 				</s:param>
 			</s:text>
 		</s:if>
 
-		<s:elseif test="#usuario.perfilActivo.id == #varCCE">
+		<s:elseif test="#usuario.perfilActivo.id == #varCELEX">
 			<s:text name="IU1A_LABEL1">
 				<s:param>
-					coordinación de control escolar
+					administrador celex
 				</s:param>
 			</s:text>
 		</s:elseif>
-		<s:elseif test="#usuario.perfilActivo.id == #varASA">
+		<s:elseif test="#usuario.perfilActivo.id == #varDENTALES">
 			<s:text name="IU1A_LABEL1">
 				<s:param>
-					asistente de secretaría de administración
+					administrador de servicios dentales
 				</s:param>
 			</s:text>
 		</s:elseif>
-		<s:elseif test="#usuario.perfilActivo.id == #varAS">
+		<s:elseif test="#usuario.perfilActivo.id == #varBIBLIOTECA">
 			<s:text name="IU1A_LABEL1">
 				<s:param>
-					aspirante
+					administrador biblioteca
 				</s:param>
 			</s:text>
 		</s:elseif>
-		<s:elseif test="#usuario.perfilActivo.id == #varPR">
+		<s:elseif test="#usuario.perfilActivo.id == #varFOTOCOPIADO">
 			<s:text name="IU1A_LABEL1">
 				<s:param>
-					profesor
+					administrador de fotocopiado
 				</s:param>
 			</s:text>
 		</s:elseif>
-		<s:elseif test="#usuario.perfilActivo.id == #varRCE">
+		<s:elseif test="#usuario.perfilActivo.id == #varCAJERO">
 			<s:text name="IU1A_LABEL1">
 				<s:param>
-					responsable de control escolar
+					encargado de caja
 				</s:param>
 			</s:text>
 		</s:elseif>
-		<s:elseif test="#usuario.perfilActivo.id == #varPS">
-			<s:text name="IU1A_LABEL1">
-				<s:param>
-					psícologo
-				</s:param>
-			</s:text>
-		</s:elseif>
-		<s:elseif test="#usuario.perfilActivo.id == #varCP">
-			<s:text name="IU1A_LABEL1">
-				<s:param>
-					coordinador de psicologos
-				</s:param>
-			</s:text>
-		</s:elseif>
-		<s:elseif test="#usuario.perfilActivo.id == #varCONT">
+		<s:elseif test="#usuario.perfilActivo.id == #varCONTADOR">
 			<s:text name="IU1A_LABEL1">
 				<s:param>
 					contador
+				</s:param>
+			</s:text>
+		</s:elseif>
+		<s:elseif test="#usuario.perfilActivo.id == #varTRABAJADOR">
+			<s:text name="IU1A_LABEL1">
+				<s:param>
+					trabajador IPN
+				</s:param>
+			</s:text>
+		</s:elseif>
+		<s:elseif test="#usuario.perfilActivo.id == #varEXTERNO">
+			<s:text name="IU1A_LABEL1">
+				<s:param>
+					externo
 				</s:param>
 			</s:text>
 		</s:elseif>
