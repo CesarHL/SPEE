@@ -3,8 +3,16 @@
     <jsp:directive.page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" />
 
     <s:set var="usuario" value="%{#session[@mx.ipn.escom.cdt.util.action.NombreObjetosSesion@USUARIO_SESION]}" />
-    <s:set var="varCONT" value="%{@mx.ipn.escom.cdt.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@CONTADOR.getValor()}" />
- 
+    <s:set var="varSUBDIRECTOR" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@SUBDIRECTOR.getValor()}" />
+ 	<s:set var="varCELEX" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ADMINISTRADOR_CELEX.getValor()}" />
+ 	<s:set var="varDENTALES" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ADMINISTRADOR_DENTALES.getValor()}" />
+ 	<s:set var="varBIBLIOTECA" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ADMINISTRADOR_BIBLIOTECA.getValor()}" />
+ 	<s:set var="varFOTOCOPIADO" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ADMINISTRADOR_FOTOCOPIADO.getValor()}" />
+ 	<s:set var="varCAJERO" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ENCARGADO_CAJA.getValor()}" />
+ 	<s:set var="varCONTADOR" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ALUMNO.getValor()}" />
+ 	<s:set var="varTRABAJADOR" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@TRABAJADOR.getValor()}" />
+ 	<s:set var="varEXTERNO" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@EXTERNO.getValor()}" />
+ 	
     <nav class="navbar navbar-fixed-top navbar-eld" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
             <div style="float: left; width: 35px; margin-left: 20px;">
@@ -30,11 +38,32 @@
 	                </ul>
 	            </li>
 	        </ul>
-	        <s:if test="#usuario.perfilActivo.id == #varCCE">
-	            <s:include value="./menu/controlEscolar.jsp" />
+	        <s:if test="#usuario.perfilActivo.id == #varSUBDIRECTOR">
+	            <s:include value="./menu/subdirector.jsp" />
 	        </s:if>
-	        <s:elseif test="#usuario.perfilActivo.id == #varCONT">
-	        	<s:include value="./menu/contador.jsp" />
+	        <s:if test="#usuario.perfilActivo.id == #varCELEX">
+	            <s:include value="./menu/celex.jsp" />
+	        </s:if>
+	        <s:if test="#usuario.perfilActivo.id == #varDENTALES">
+	            <s:include value="./menu/serviciosDentales.jsp" />
+	        </s:if>
+	        <s:if test="#usuario.perfilActivo.id == #varBIBLIOTECA">
+	            <s:include value="./menu/biblioteca.jsp" />
+	        </s:if>
+	        <s:if test="#usuario.perfilActivo.id == #varFOTOCOPIADO">
+	            <s:include value="./menu/fotocopiado.jsp" />
+	        </s:if>
+	        <s:if test="#usuario.perfilActivo.id == #varCAJERO">
+	            <s:include value="./menu/cajero.jsp" />
+	        </s:if>
+	        <s:if test="#usuario.perfilActivo.id == #varCONTADOR">
+	            <s:include value="./menu/contador.jsp" />
+	        </s:if>
+	        <s:if test="#usuario.perfilActivo.id == #varTRABAJADOR">
+	            <s:include value="./menu/trabajador.jsp" />
+	        </s:if>
+	        <s:elseif test="#usuario.perfilActivo.id == #varEXTERNO">
+	        	<s:include value="./menu/externo.jsp" />
 	        </s:elseif>
         </s:if>
     </nav>

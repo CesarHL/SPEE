@@ -74,24 +74,25 @@ public class LoginAct extends ActionSupport {
 	 */
 	public String create() {
 		Usuario usuario = (Usuario) SessionManager.get(NombreObjetosSesion.USUARIO_SESION);
-		System.err.println("usuario: " + usuario.getLogin());
-		if (PerfilUsuarioEnum.SECRETARIA_DE_ADMINISTRACION.getValor().equals(usuario.getId())) {
+		if (PerfilUsuarioEnum.SUBDIRECTOR.getValor().equals(usuario.getId())) {
 			action = BIENVENIDA_RESULT;
-		} else if (PerfilUsuarioEnum.COORDINACION_CONTROL_ESCOLAR.getValor().equals(usuario.getId())) {
+		} else if (PerfilUsuarioEnum.ADMINISTRADOR_CELEX.getValor().equals(usuario.getId())) {
 			action = BIENVENIDA_RESULT;
-		} else if (PerfilUsuarioEnum.ASISTENTE_S_A.getValor().equals(usuario.getId())) {
+		} else if (PerfilUsuarioEnum.ADMINISTRADOR_DENTALES.getValor().equals(usuario.getId())) {
 			action = BIENVENIDA_RESULT;
-		} else if (PerfilUsuarioEnum.ASPIRANTE.getValor().equals(usuario.getId())) {
+		} else if (PerfilUsuarioEnum.ADMINISTRADOR_BIBLIOTECA.getValor().equals(usuario.getId())) {
 			action = "../admision/gestionar-aspirantes!etapaProceso";
-		} else if (PerfilUsuarioEnum.PROFESOR.getValor().equals(usuario.getId())) {
+		} else if (PerfilUsuarioEnum.ADMINISTRADOR_FOTOCOPIADO.getValor().equals(usuario.getId())) {
 			action = BIENVENIDA_RESULT;
-		} else if (PerfilUsuarioEnum.RESPONSABLE_CONTROL_ESCOLAR.getValor().equals(usuario.getId())) {
-			action = BIENVENIDA_RESULT;
-		} else if (PerfilUsuarioEnum.PSICOLOGO.getValor().equals(usuario.getId())) {
-			action = BIENVENIDA_RESULT;
-		} else if (PerfilUsuarioEnum.COORDINADOR_PSICOLOGO.getValor().equals(usuario.getId())) {
+		} else if (PerfilUsuarioEnum.ENCARGADO_CAJA.getValor().equals(usuario.getId())) {
 			action = BIENVENIDA_RESULT;
 		} else if (PerfilUsuarioEnum.CONTADOR.getValor().equals(usuario.getId())) {
+			action = BIENVENIDA_RESULT;
+		} else if (PerfilUsuarioEnum.ALUMNO.getValor().equals(usuario.getId())) {
+			action = BIENVENIDA_RESULT;
+		} else if (PerfilUsuarioEnum.TRABAJADOR.getValor().equals(usuario.getId())) {
+			action = BIENVENIDA_RESULT;
+		} else if (PerfilUsuarioEnum.EXTERNO.getValor().equals(usuario.getId())) {
 			action = BIENVENIDA_RESULT;
 		} else {
 			action = "../example/example-a";

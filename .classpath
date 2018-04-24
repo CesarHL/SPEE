@@ -17,11 +17,10 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry excluding="pages/|pages/admision/|resources/components/|resources/css/|resources/decorators/|resources/scripts/|resources/themes/|resources/|files/|files/" kind="src" path="src/main/webapp"/>
+	<classpathentry excluding="pages/|pages/admision/|resources/components/|resources/css/|resources/decorators/|resources/scripts/|resources/themes/|resources/|files/" kind="src" path="src/main/webapp"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
