@@ -5,7 +5,7 @@
 		contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" />
 	<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<!-- Head -->
+
 </head>
 <body>
 	<s:set var="varTheme" value="%{getText('mx.edu.eld.defaulTheme')}" />
@@ -67,8 +67,11 @@
 					<div class="col-md-12 center">
 						<a class="liga"
 							href="${pageContext.request.contextPath}/control-acceso/recuperar-password/"><s:text
-								name="CU4_LBL3" /></a>
+								name="CU4_LBL3" /></a> 
 					</div>
+					<a class="liga"
+							href="${pageContext.request.contextPath}/control-acceso/recuperar-password/"><s:text
+								name="registar usuario" /></a>
 				</div>
 			</div>
 		</s:form>
