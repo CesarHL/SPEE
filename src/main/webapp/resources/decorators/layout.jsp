@@ -51,7 +51,7 @@
 				<script src="${pageContext.request.contextPath}/resources/scripts/gestionar-mensajes-ajax/gestionar-errores.js" type="text/javascript"></script>
 				<script src="${pageContext.request.contextPath}/resources/components/mask/jquery.mask.min.js" type="text/javascript"></script>
 				<script src="${pageContext.request.contextPath}/resources/components/ckeditor/ckeditor.js" type="text/javascript"></script>
-				<script src="${pageContext.request.contextPath}/resources/scripts/cdt-ckeditor.js" type="text/javascript"></script>
+				<script src="${pageContext.request.contextPath}/resources/scripts/ckeditor.js" type="text/javascript"></script>
 				<script src="${pageContext.request.contextPath}/resources/components/globalize/globalize.js" type="text/javascript"></script>
 				<script src="${pageContext.request.contextPath}/resources/components/globalize/globalize.culture.es-MX.js" type="text/javascript"></script>
 			    <script src="${pageContext.request.contextPath}/resources/scripts/spinner-validation.js" type="text/javascript"></script>

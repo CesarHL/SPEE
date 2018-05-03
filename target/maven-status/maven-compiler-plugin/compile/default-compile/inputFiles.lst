@@ -19,6 +19,7 @@ C:\Users\Erick\Desktop\spee\src\main\java\mx\ipn\escom\spee\util\ResultConstants
 C:\Users\Erick\Desktop\spee\src\main\java\mx\ipn\escom\spee\action\SessionFile.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\ipn\escom\spee\action\Error.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\edu\spee\controlacceso\action\LoginAspiranteAct.java
+C:\Users\Erick\Desktop\spee\src\main\java\mx\edu\spee\pagos\action\GestionarNotasPagoAct.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\ipn\escom\spee\util\Numeros.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\edu\spee\pagos\action\GestionarConceptoPagoAct.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\ipn\escom\spee\util\mapeo\Modelo.java
@@ -26,6 +27,7 @@ C:\Users\Erick\Desktop\spee\src\main\java\mx\ipn\escom\spee\action\SessionManage
 C:\Users\Erick\Desktop\spee\src\main\java\mx\ipn\escom\spee\mail\controller\ContextLoader.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\ipn\escom\spee\util\mapeo\AjaxResult.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\ipn\escom\spee\util\bs\GenericBs.java
+C:\Users\Erick\Desktop\spee\src\main\java\mx\edu\spee\pagos\action\ConsultarServiciosAct.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\edu\spee\controlacceso\action\LoginAct.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\edu\spee\controlacceso\bs\LoginBs.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\ipn\escom\spee\controlacceso\mapeo\Cuenta.java
@@ -38,6 +40,7 @@ C:\Users\Erick\Desktop\spee\src\main\java\mx\ipn\escom\spee\mail\model\ReporteEr
 C:\Users\Erick\Desktop\spee\src\main\java\mx\ipn\escom\spee\action\JsonUtil.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\ipn\escom\spee\util\dao\GenericDao.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\ipn\escom\spee\util\listener\LocaleLanguageListener.java
+C:\Users\Erick\Desktop\spee\src\main\java\mx\edu\spee\pagos\action\GestionarPagosAct.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\edu\spee\controlacceso\action\CambiarContrasenaAct.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\edu\spee\example\action\MenuAct.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\edu\spee\pagos\action\GestionarArchivoPagosAct.java
@@ -45,6 +48,7 @@ C:\Users\Erick\Desktop\spee\src\main\java\mx\edu\spee\controlacceso\exception\Us
 C:\Users\Erick\Desktop\spee\src\main\java\mx\ipn\escom\spee\controlacceso\mapeo\Perfil.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\edu\spee\pagos\action\GestionarAutorizacionPagosAct.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\edu\spee\pagos\action\GestionarPagosAutorizadosAct.java
+C:\Users\Erick\Desktop\spee\src\main\java\mx\edu\spee\controlacceso\action\ModificarDatosAct.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\edu\spee\controlacceso\mapeo\Cuenta.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\ipn\escom\spee\controlacceso\mapeo\Usuario.java
 C:\Users\Erick\Desktop\spee\src\main\java\mx\ipn\escom\spee\util\mapeo\ContactoELD.java

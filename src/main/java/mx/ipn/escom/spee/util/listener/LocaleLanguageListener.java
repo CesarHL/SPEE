@@ -12,7 +12,6 @@ public class LocaleLanguageListener implements ServletContextListener {
 	@Override
 	public void contextInitialized(ServletContextEvent sce) {
 		Locale.setDefault(new Locale("es", "MX"));
-		System.out.println("Lenguaje localizado a Español de México");
 	}
 
 	@Override
