@@ -7,7 +7,7 @@
 
 <jsp:text>
 	<![CDATA[                 
-	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/pagos/gestionar-pagos-autorizados/js/editNew.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/pagos/gestionar-autorizacion-pagos/js/index-editNew.js"></script>
 	]]>
 </jsp:text>
 
