@@ -28,10 +28,10 @@
 	locale="es" customBasepath="%{#urlRutaContextoTema}" />
 <title><s:text name="mx.ipn.escom.title" /></title>
 <link rel="icon" type="image/png"
-	href="${pageContext.request.contextPath}/resources/images/ipn-logo.png"
+	href="${pageContext.request.contextPath}/resources/images/ipn-logo-color.png"
 	sizes="32x32" />
 <link rel="icon" type="image/png"
-	href="${pageContext.request.contextPath}/resources/images/ipn-logo.png"
+	href="${pageContext.request.contextPath}/resources/images/ipn-logo-color.png"
 	sizes="16x16" />
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/components/sidebar/vendor/bootstrap/css/bootstrap.min.css" />
@@ -97,7 +97,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- Campos necesarios para la instanciacion del idioma español en los datatables -->
 	<input type="text" style="display: none;" id="hdnRutaContexto"
 		value="${pageContext.request.contextPath}" />
 	<s:textfield cssClass="hide" id="hdnUrlLanguageDataTable"

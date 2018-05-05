@@ -1,9 +1,7 @@
 @CHARSET "UTF-8";
 
-/* Estilos para el fondo, tamaño y marco de un formulario */
 .form {
 	background-color: #FFFFFF;
-	border: 2px solid;
 	border-color: rgb(80, 0, 20);
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;

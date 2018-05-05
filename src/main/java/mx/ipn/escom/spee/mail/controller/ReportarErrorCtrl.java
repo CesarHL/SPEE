@@ -37,12 +37,6 @@ public class ReportarErrorCtrl extends ActionSupport {
 	private MailSender mailSender;
 	private ReporteError error;
 
-	/**
-	 * M��todo llamado de forma asincrona el cual a su vez se encarga de llamar a
-	 * el m��todo que envia el reporte con la
-	 * 
-	 * @return
-	 */
 	public String generarReporte() {
 		Map<String, Object> templateEntities = new HashMap<String, Object>();
 		List<String> to = Arrays.asList(getText("mail.notify").split(","));
