@@ -32,8 +32,7 @@
 	            		<i class="material-icons md-18 md-light">&#xE7FD;</i>
 		            </a>
 	                <ul class="dropdown-menu dropdown-messages">
-	                    <li><a href="#">Perfil de usuario</a></li>
-	                    <li><a href="#">Cuenta</a></li>
+	                    <li><a href="${pageContext.request.contextPath}/control-acceso/modificar-datos/new">Modificar Datos</a></li>
 	                    <li><a href="${pageContext.request.contextPath}/control-acceso/logout!execute">Cerrar Sesión</a></li>
 	                </ul>
 	            </li>

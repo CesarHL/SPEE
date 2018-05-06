@@ -75,7 +75,7 @@
 
 <div class="text-right">
 	<a
-		href="${pageContext.request.contextPath}/pagos/consultar-servicios!visualizarServiciosCelex"
+		href="#"
 		class="btn btn-default btn-default-eld"><s:text
 			name="%{getText('mx.com.eld.boton.agendar.cita')}" /></a> <a
 		href="${pageContext.request.contextPath}/pagos/consultar-servicios!visualizarServiciosDentales"

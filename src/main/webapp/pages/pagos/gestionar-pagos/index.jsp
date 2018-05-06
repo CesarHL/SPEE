@@ -42,7 +42,7 @@
 					<tbody>
 						<s:iterator value="listPagosEnviados" var="pagAutorizado">
 							<tr>
-								<td>${pagAutorizado[0]}</td>
+								<td><i class="material-icons  md-24 md-eld-green ">&#xE061;</i></td>
 								<td>${pagAutorizado[1]}</td>
 								<td>${pagAutorizado[2]}</td>
 								<td>${pagAutorizado[3]}</td>
@@ -59,16 +59,19 @@
 </div>
 <div class="text-left">
 	<div class="col-md-12">
-		<label><s:text name="CU15_LBL"></s:text></label>
-		<s:text name="CU15_LBL1"></s:text>
+		<label class="control-label"><i
+			class="material-icons  md-24 md-sem-green ">&#xE061;</i></label> <label><s:text
+				name="CU15_LBL1"></s:text></label>
 	</div>
 	<div class="col-md-12">
-		<label><s:text name="CU15_LBL"></s:text></label>
-		<s:text name="CU15_LBL2"></s:text>
+		<label class="control-label"><i
+			class="material-icons  md-24 md-sem-yellow ">&#xE061;</i></label> <label><s:text
+				name="CU15_LBL2"></s:text></label>
 	</div>
 	<div class="col-md-12">
-		<label><s:text name="CU15_LBL"></s:text></label>
-		<s:text name="CU15_LBL3"></s:text>
+		<label class="control-label"><i
+			class="material-icons  md-24 md-sem-rojo ">&#xE061;</i></label> <label><s:text
+				name="CU15_LBL3"></s:text></label>
 	</div>
 </div>
 	</html>

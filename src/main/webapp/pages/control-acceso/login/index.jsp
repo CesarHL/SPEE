@@ -66,12 +66,9 @@
 				<div class="row">
 					<div class="col-md-12 center">
 						<a class="liga"
-							href="${pageContext.request.contextPath}/control-acceso/recuperar-password/"><s:text
-								name="CU4_LBL3" /></a> 
+							href="${pageContext.request.contextPath}/control-acceso/registrar-usuario/new"><s:text
+								name="CU4_LBL3" /></a>
 					</div>
-					<a class="liga"
-							href="${pageContext.request.contextPath}/control-acceso/recuperar-password/"><s:text
-								name="registar usuario" /></a>
 				</div>
 			</div>
 		</s:form>
