@@ -12,8 +12,8 @@
 </jsp:text>
 
 <s:set var="listPagosAutorizados"
-	value="{{'Idioma inglés Alumno', '$480 MXN', 'Pago inscripción'},
-	 {'Reinscripción', '$580 MXN', 'Pago reinscripción idioma inglés'}}" />
+	value="{{'Amalgama', '$480 MXN', 'Colocación de amalgama'},
+	 {'Limpieza dental', '$580 MXN', 'Limpieza dental'}}" />
 
 <s:set var="ttbVisualizar" value="%{getText('tooltipVisualizar')}" />
 <s:set var="ttbArchivar" value="%{getText('tooltipArchivar')}" />
@@ -39,7 +39,6 @@
 							<th><s:text name="CU92_THEAD1" /></th>
 							<th><s:text name="CU92_THEAD2" /></th>
 							<th><s:text name="CU92_THEAD3" /></th>
-							<th><s:text name="CU92_THEAD4" /></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -48,15 +47,6 @@
 								<td>${pagoAutorizado[0]}</td>
 								<td>${pagoAutorizado[1]}</td>
 								<td>${pagoAutorizado[2]}</td>
-								<td><a
-									href="${pageContext.request.contextPath}/pagos/gestionar-archivo-pagos/show"
-									title="${ttbVisualizar}"> <i
-										class="material-icons md-24 md-eld">${varIconoVisualizar}</i>
-								</a><a
-									href="${pageContext.request.contextPath}/pagos/gestionar-archivo-pagos/show"
-									title="${ttbArchivar}"> <i
-										class="material-icons md-24 md-eld">${varIconoArchivar}</i>
-								</a></td>
 							</tr>
 						</s:iterator>
 					</tbody>
@@ -67,7 +57,7 @@
 </div>
 <div class="col-md-12 text-right">
 	<a
-		href="#"
+		href="${pageContext.request.contextPath}/citas/gestionar-citas-dentales/new"
 		class="btn btn-default btn-default-eld"><s:text
 			name="%{getText('mx.com.eld.boton.agendar.cita')}" /></a>
 			<a
