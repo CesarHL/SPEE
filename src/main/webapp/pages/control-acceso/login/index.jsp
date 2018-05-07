@@ -23,12 +23,6 @@
 		</div>
 	</div>
 
-	<div class="outter-section form-medium text-left">
-		<div class="col-md-12">
-			<s:text name="mx.com.eld.label.camposObligatorios" />
-		</div>
-	</div>
-
 	<div class="col-sm-12">
 		<s:form id="frmLogin" method="post" theme="simple"
 			cssClass="form form-horizontal form-medium"

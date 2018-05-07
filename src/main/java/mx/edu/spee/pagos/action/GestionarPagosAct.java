@@ -11,9 +11,12 @@ public class GestionarPagosAct extends GeneralActionSupport {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	public String index() {
 		return INDEX;
 	}
 
+	public String editNew() {
+		return EDITNEW;
+	}
 }

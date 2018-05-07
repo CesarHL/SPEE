@@ -50,7 +50,7 @@
 								<td>${pagoAutorizado[1]}</td>
 								<td>${pagoAutorizado[2]}</td>
 								<td><a
-									href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos/new"
+									href="${pageContext.request.contextPath}/pagos/gestionar-pagos/new"
 									title="${ttbAdjuntar}"> <i
 										class="material-icons md-24 md-eld">${varIconoAdjuntar}</i>
 								</a><a href="#" title="${ttbBancomer}"> <i

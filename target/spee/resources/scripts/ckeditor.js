@@ -1,9 +1,3 @@
-/**
- * Librerias para utilizar el componente de CKEDITOR
- * 
- * @author CDT-ESCOM
- * @version 0.1 "Sep 13, 2017"
- */
 var ckeditorCDT = function() {
 	/**
 	 * Crea una instancia de ckeditor con la configuracion descrita en el

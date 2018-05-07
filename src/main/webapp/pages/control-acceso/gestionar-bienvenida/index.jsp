@@ -17,11 +17,12 @@
  	<s:set var="varCONTADOR" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ALUMNO.getValor()}" />
  	<s:set var="varTRABAJADOR" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@TRABAJADOR.getValor()}" />
  	<s:set var="varEXTERNO" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@EXTERNO.getValor()}" />
+ 	<s:set var="varALUMNO" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ALUMNO.getValor()}" />
  	
 	<div class="row title">
 		<div class="col-md-12">
 			<h1 class="title">
-				<s:text name="IU1A_TITLE" />
+				<s:text name="CU51_TITLE" />
 			</h1>
 		</div>
 	</div>
@@ -34,64 +35,70 @@
 	
 	<div class="outter-section form form-medium">
 		<s:if test="#usuario.perfilActivo.id == #varSUBDIRECTOR">
-			<s:text name="IU1A_LABEL1">
+			<s:text name="CU51_LBL1">
 				<s:param>
 					subdirector
 				</s:param>
 			</s:text>
 		</s:if>
-
 		<s:elseif test="#usuario.perfilActivo.id == #varCELEX">
-			<s:text name="IU1A_LABEL1">
+			<s:text name="CU51_LBL1">
 				<s:param>
 					administrador celex
 				</s:param>
 			</s:text>
 		</s:elseif>
 		<s:elseif test="#usuario.perfilActivo.id == #varDENTALES">
-			<s:text name="IU1A_LABEL1">
+			<s:text name="CU51_LBL1">
 				<s:param>
 					administrador de servicios dentales
 				</s:param>
 			</s:text>
 		</s:elseif>
 		<s:elseif test="#usuario.perfilActivo.id == #varBIBLIOTECA">
-			<s:text name="IU1A_LABEL1">
+			<s:text name="CU51_LBL1">
 				<s:param>
 					administrador biblioteca
 				</s:param>
 			</s:text>
 		</s:elseif>
 		<s:elseif test="#usuario.perfilActivo.id == #varFOTOCOPIADO">
-			<s:text name="IU1A_LABEL1">
+			<s:text name="CU51_LBL1">
 				<s:param>
 					administrador de fotocopiado
 				</s:param>
 			</s:text>
 		</s:elseif>
 		<s:elseif test="#usuario.perfilActivo.id == #varCAJERO">
-			<s:text name="IU1A_LABEL1">
+			<s:text name="CU51_LBL1">
 				<s:param>
 					encargado de caja
 				</s:param>
 			</s:text>
 		</s:elseif>
 		<s:elseif test="#usuario.perfilActivo.id == #varCONTADOR">
-			<s:text name="IU1A_LABEL1">
+			<s:text name="CU51_LBL1">
 				<s:param>
 					contador
 				</s:param>
 			</s:text>
 		</s:elseif>
 		<s:elseif test="#usuario.perfilActivo.id == #varTRABAJADOR">
-			<s:text name="IU1A_LABEL1">
+			<s:text name="CU51_LBL1">
 				<s:param>
 					trabajador IPN
 				</s:param>
 			</s:text>
 		</s:elseif>
+		<s:elseif test="#usuario.perfilActivo.id == #varALUMNO">
+			<s:text name="CU51_LBL1">
+				<s:param>
+					alumno IPN
+				</s:param>
+			</s:text>
+		</s:elseif>
 		<s:elseif test="#usuario.perfilActivo.id == #varEXTERNO">
-			<s:text name="IU1A_LABEL1">
+			<s:text name="ICU51_LBL1">
 				<s:param>
 					externo
 				</s:param>

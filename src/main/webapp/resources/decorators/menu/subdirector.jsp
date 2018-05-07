@@ -12,14 +12,14 @@
 			<ul class="nav" id="side-menu">
 				<li class="dropdown"><a
 					href="${pageContext.request.contextPath}/pagos/gestionar-pagos"><s:text
-							name="menu.contador.pagos" /><span class="fa arrow"></span> </a>
+							name="menu.contador.spagos" /><span class="fa arrow"></span> </a>
 					<ul class="nav nav-second-level">
 						<li class="dropdown"><a
 							href="${pageContext.request.contextPath}/pagos/gestionar-concepto-pago">
-								<s:text name="menu.contador.gestionar_conceptos" />
+								<s:text name="mensu.contador.gestionar_conceptos" />
 						</a> <a
 							href="${pageContext.request.contextPath}/pagos/gestionar-costo-concepto/new">
-								<s:text name="menu.contador.costo_conceptos" />
+								<s:text name="mensu.contador.costo_conceptos" />
 						</a></li>
 					</ul></li>
 			</ul>

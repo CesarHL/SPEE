@@ -9,9 +9,10 @@
  	<s:set var="varBIBLIOTECA" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ADMINISTRADOR_BIBLIOTECA.getValor()}" />
  	<s:set var="varFOTOCOPIADO" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ADMINISTRADOR_FOTOCOPIADO.getValor()}" />
  	<s:set var="varCAJERO" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ENCARGADO_CAJA.getValor()}" />
- 	<s:set var="varCONTADOR" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ALUMNO.getValor()}" />
+ 	<s:set var="varCONTADOR" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@CONTADOR.getValor()}" />
  	<s:set var="varTRABAJADOR" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@TRABAJADOR.getValor()}" />
  	<s:set var="varEXTERNO" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@EXTERNO.getValor()}" />
+ 	<s:set var="varALUMNO" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ALUMNO.getValor()}" />
  	
     <nav class="navbar navbar-fixed-top navbar-eld" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
@@ -60,6 +61,9 @@
 	        </s:if>
 	        <s:if test="#usuario.perfilActivo.id == #varTRABAJADOR">
 	            <s:include value="./menu/trabajador.jsp" />
+	        </s:if>
+	        <s:if test="#usuario.perfilActivo.id == #varALUMNO">
+	            <s:include value="./menu/alumno.jsp" />
 	        </s:if>
 	        <s:elseif test="#usuario.perfilActivo.id == #varEXTERNO">
 	        	<s:include value="./menu/externo.jsp" />

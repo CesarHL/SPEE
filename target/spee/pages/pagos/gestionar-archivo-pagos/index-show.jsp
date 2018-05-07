@@ -51,6 +51,8 @@
 								<td>${pagoMes[0]}</td>
 								<td>${pagoMes[1]}</td>
 								<td>${pagoMes[2]}</td>
+								<td>${pagoMes[3]}</td>
+								<td>${pagoMes[4]}</td>
 								<td><a
 									href="${pageContext.request.contextPath}/pagos/gestionar-archivo-pagos/show"
 									title="${ttbVisualizar}"> <i

@@ -8,13 +8,12 @@
 <jsp:text>
 	<![CDATA[
 	<script
-		src="${pageContext.request.contextPath}/pages/control-acceso/crear-cuenta/js/index-editNew.js"
+		src="${pageContext.request.contextPath}/pages/control-acceso/registrar-usuario/js/index-editNew.js"
 		type="text/javascript"></script>
 	]]>
 </jsp:text>
 </head>
 <body>
-	<!-- Variables -->
 	<s:set var="tool"
 		value="'Nullam rhoncus ex eget lacinia ornare. Morbi dictum ante sed nulla maximus viverra. Morbi eu lorem vitae est condimentum iaculis sit amet vel sapien. Orci varius natoque penatibus et magnis dis parturient montes,
 	 		nascetur ridiculus mus. Morbi dolor augue, gravida nec luctus vel, auctor at lectus. '" />
@@ -25,7 +24,7 @@
 	<div class="row title">
 		<div class="col-md-12">
 			<h1 class="title">
-				<s:text name="IU1.3-2_TITLE"></s:text>
+				<s:text name="CU1_TITLE"></s:text>
 			</h1>
 		</div>
 	</div>
@@ -47,12 +46,12 @@
 		method="post" theme="simple">
 		<fieldset class="form form-horizontal form-medium">
 			<legend class="form-section">
-				<s:text name="IU1.3-2_SUBTITLE" />
+				<s:text name="CU1_SUBTITLE" />
 			</legend>
 			<div class="form-group">
 				<label
 					class="col-xs-12 col-sm-4 col-md-4 control-label label-obligatorio"
-					for=""> <s:text name="IU1.4-1_LBL1" />
+					for=""> <s:text name="CU1_LBL1" />
 				</label>
 				<div class="col-xs-12 col-sm-8 col-md-8">
 					<s:textfield cssClass="form-control campo"
@@ -63,7 +62,7 @@
 			<div class="form-group">
 				<label
 					class="col-xs-12 col-sm-4 col-md-4 control-label label-obligatorio"
-					for=""> <s:text name="IU1.3-2_LBL1" />
+					for=""> <s:text name="CU1_LBL2" />
 				</label>
 				<div class="col-xs-12 col-sm-8 col-md-8">
 					<s:textfield cssClass="form-control campo"
@@ -74,7 +73,7 @@
 			<div class="form-group">
 				<label
 					class="col-xs-12 col-sm-4 col-md-4 control-label label-obligatorio"
-					for=""> <s:text name="IU1.3-2_LBL2" />
+					for=""> <s:text name="CU1_LBL3" />
 				</label>
 				<div class="col-xs-12 col-sm-8 col-md-8">
 					<s:textfield cssClass="form-control campo"
@@ -84,7 +83,7 @@
 			</div>
 			<div class="form-group">
 				<label class="col-xs-12 col-sm-4 col-md-4 control-label" for="">
-					<s:text name="IU1.3-2_LBL3" />
+					<s:text name="CU1_LBL4" />
 				</label>
 				<div class="col-xs-12 col-sm-8 col-md-8">
 					<s:textfield cssClass="form-control campo"
@@ -95,7 +94,7 @@
 			<div class="form-group">
 				<label
 					class="col-xs-12 col-sm-4 col-md-4 control-label label-obligatorio"
-					for=""> <s:text name="IU1.3-2_LBL4" />
+					for=""> <s:text name="CU1_LBL5" />
 				</label>
 				<div class="col-xs-12 col-sm-8 col-md-8">
 					<s:textfield cssClass="form-control campo"
@@ -107,8 +106,7 @@
 				<div class="col-xs-12 col-sm-4 col-md-4 control-label">
 					<i class="material-icons md-15 md-eld" data-toggle="tooltip"
 						data-placement="top" title="${tool}"> &#xE887; </i> &#160; <label
-						class="label-obligatorio" for=""> <s:text
-							name="IU1.3-2_LBL5" />
+						class="label-obligatorio" for=""> <s:text name="CU1_LBL6" />
 					</label>
 				</div>
 				<div class="col-xs-12 col-sm-8 col-md-8">
@@ -119,7 +117,7 @@
 			</div>
 			<div class="form-group">
 				<label class=" col-sm-4 col-md-4 control-label label-obligatorio"
-					for=""> <s:text name="IU1.3-2_LBL6" />
+					for=""> <s:text name="CU1_LBL7" />
 				</label>
 				<div class="col-xs-12 col-sm-8 col-md-8">
 					<s:textfield cssClass="form-control campo"
@@ -127,7 +125,16 @@
 					<s:fielderror fieldName="" cssClass="error" theme="" />
 				</div>
 			</div>
-
+			<div class="form-group">
+				<label class=" col-sm-4 col-md-4 control-label label-obligatorio"
+					for=""> <s:text name="CU1_LBL8" />
+				</label>
+				<div class="col-xs-12 col-sm-8 col-md-8">
+					<s:textfield cssClass="form-control campo"
+						cssClassError="input-error" id="txConfirmPassword" />
+					<s:fielderror fieldName="" cssClass="error" theme="" />
+				</div>
+			</div>
 		</fieldset>
 
 		<div class="outter-section form-medium text-right">

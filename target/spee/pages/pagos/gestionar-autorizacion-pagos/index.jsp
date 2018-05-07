@@ -7,7 +7,7 @@
 
 <jsp:text>
 	<![CDATA[                 
-	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/pagos/gestionar-pagos-autorizados/js/editNew.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/pagos/gestionar-autorizacion-pagos/js/index-editNew.js"></script>
 	]]>
 </jsp:text>
 
@@ -52,6 +52,10 @@
 								<td>${pagoAutorizado[0]}</td>
 								<td>${pagoAutorizado[1]}</td>
 								<td>${pagoAutorizado[2]}</td>
+								<td>${pagoAutorizado[3]}</td>
+								<td>${pagoAutorizado[4]}</td>
+								<td>${pagoAutorizado[5]}</td>
+
 								<td><a
 									href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos/show"
 									title="${ttbVisualizar}"> <i
