@@ -1,14 +1,23 @@
 package mx.ipn.escom.spee.pagos.action;
 
 import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.opensymphony.xwork2.ActionSupport;
 
 import mx.ipn.escom.spee.action.GeneralActionSupport;
 import mx.ipn.escom.spee.action.NombreObjetosSesion;
 import mx.ipn.escom.spee.action.SessionManager;
 import mx.ipn.escom.spee.controlacceso.mapeo.Usuario;
+import mx.ipn.escom.spee.pagos.bs.PagoBs;
 import mx.ipn.escom.spee.util.ResultConstants;
 
 @Namespace("/pagos")
+@Results({
+		@Result(name = ActionSupport.SUCCESS, type = "redirectAction",
+				params = { "actionName", "gestionar-pagos/new" }) })
 public class GestionarPagosAct extends GeneralActionSupport {
 
 	/**
@@ -17,6 +26,9 @@ public class GestionarPagosAct extends GeneralActionSupport {
 	private static final long serialVersionUID = 1L;
 
 	private Usuario usuarioSel;
+
+	@Autowired
+	private PagoBs pagoBs;
 
 	public String index() {
 		getUsuarioSel();
@@ -35,6 +47,15 @@ public class GestionarPagosAct extends GeneralActionSupport {
 	public String editNew() {
 		return EDITNEW;
 	}
+	
+	public void validateCreate() {
+		pagoBs.registrarPago();
+	}
+
+	public String create() {
+		addActionMessage("Pago se envió exitosamente");
+		return SUCCESS;
+	}
 
 	public Usuario getUsuarioSel() {
 		if (SessionManager.get(NombreObjetosSesion.USUARIO_SESION) != null) {
@@ -46,4 +67,13 @@ public class GestionarPagosAct extends GeneralActionSupport {
 	public void setUsuarioSel(Usuario usuarioSel) {
 		this.usuarioSel = usuarioSel;
 	}
+
+	public PagoBs getPagoBs() {
+		return pagoBs;
+	}
+
+	public void setPagoBs(PagoBs pagoBs) {
+		this.pagoBs = pagoBs;
+	}
+
 }

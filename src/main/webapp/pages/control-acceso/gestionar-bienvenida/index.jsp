@@ -14,7 +14,7 @@
  	<s:set var="varBIBLIOTECA" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ADMINISTRADOR_BIBLIOTECA.getValor()}" />
  	<s:set var="varFOTOCOPIADO" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ADMINISTRADOR_FOTOCOPIADO.getValor()}" />
  	<s:set var="varCAJERO" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ENCARGADO_CAJA.getValor()}" />
- 	<s:set var="varCONTADOR" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ALUMNO.getValor()}" />
+ 	<s:set var="varCONTADOR" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@CONTADOR.getValor()}" />
  	<s:set var="varTRABAJADOR" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@TRABAJADOR.getValor()}" />
  	<s:set var="varEXTERNO" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@EXTERNO.getValor()}" />
  	<s:set var="varALUMNO" value="%{@mx.ipn.escom.spee.controlacceso.mapeo.Perfil$PerfilUsuarioEnum@ALUMNO.getValor()}" />
