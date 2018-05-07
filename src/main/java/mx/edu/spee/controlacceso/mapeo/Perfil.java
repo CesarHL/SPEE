@@ -10,20 +10,30 @@ import javax.persistence.Table;
 
 import mx.ipn.escom.spee.util.mapeo.Catalogo;
 
-/**
- * Abstrae la información para el manejo de los distintos perfiles de acceso al
- * sistema.
- * 
- * @author hermes
- *
- */
 @Entity
 @Table(name = "tau01_perfil")
 public class Perfil implements Catalogo {
 	public enum perfilEnum {
-		SECRETARIA_ADMINISTRACION(1, "Secretaria de administracion"), COORDINACION_CONTROL_ESCOLAR(2,
-				"Coordinacion de control escolar"), ASISTENTE_SECRETARIA_ADMINISTRACION(3,
-						"Asistente para la secretaria de administración"), ASPIRANTE(4, "Aspirante");
+		SUBDIRECTOR(1, "Subdirector"),
+
+		ADMINISTRADOR_CELEX(2, "Coordinacion de control escolar"),
+
+		ADMINISTRADOR_DENTALES(3, "Asistente para la secretaria de administración"),
+
+		ADMINISTRADOR_BIBLIOTECA(4, "Aspirante"),
+
+		ADMINISTRADOR_FOTOCOPIADO(5, "Aspirante"),
+
+		ENCARGADO_CAJA(6, "Aspirante"),
+
+		CONTADOR(7, "Aspirante"),
+
+		ALUMNO(8, "Aspirante"),
+
+		TRABAJADOR(9, "Aspirante"),
+
+		EXTERNO(10, "Aspirante");
+
 		private Integer perfil;
 		private String nombre;
 
@@ -32,25 +42,16 @@ public class Perfil implements Catalogo {
 			this.nombre = nombre;
 		}
 
-		/**
-		 * @return the perfil
-		 */
 		public Integer getPerfil() {
 			return perfil;
 		}
 
-		/**
-		 * @return the nombre
-		 */
 		public String getNombre() {
 			return nombre;
 		}
 
 	}
 
-	/**
-	 * Identificador del elemento del catálogo
-	 */
 	@Id
 	@SequenceGenerator(name = "", sequenceName = "")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "")

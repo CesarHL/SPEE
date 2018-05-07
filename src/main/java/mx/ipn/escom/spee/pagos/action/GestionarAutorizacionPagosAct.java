@@ -1,4 +1,4 @@
-package mx.edu.spee.pagos.action;
+package mx.ipn.escom.spee.pagos.action;
 
 import org.apache.struts2.convention.annotation.AllowedMethods;
 import org.apache.struts2.convention.annotation.Namespace;

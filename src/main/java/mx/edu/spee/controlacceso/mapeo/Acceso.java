@@ -9,17 +9,6 @@ import javax.persistence.Table;
 
 import mx.ipn.escom.spee.util.mapeo.Modelo;
 
-/**
- * Contiene la información necesaria para la verificación del acceso de un
- * usuario. Tal como, el número de intentos fallidos que tiene el
- * {@link Usuario}.
- * 
- * Si un {@link Usuario} realiza un determinado número de intentos fallidos, la
- * cuenta será bloqueada por un intervalo de tiempo dado.
- * 
- * @author luna
- *
- */
 @Entity
 @Table(name = "tau04_acceso")
 public class Acceso implements Modelo {

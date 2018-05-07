@@ -5,13 +5,6 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
-/**
- * Implementa la llace compuesta de una cuenta de {@link Usuario}
- * 
- * @author hermes
- *
- */
-
 @Embeddable
 public class CuentaId implements Serializable {
 

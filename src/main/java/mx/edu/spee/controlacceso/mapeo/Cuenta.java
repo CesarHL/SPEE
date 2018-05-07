@@ -11,14 +11,6 @@ import javax.persistence.Table;
 
 import mx.ipn.escom.spee.util.mapeo.Modelo;
 
-/**
- * Contiene la información necesaria para autenticar a un {@link Usuario}. Esta
- * entidad contiene la información necesaria para determinar los periodos en los
- * que un usuario puede o no ingresar al sistema.
- * 
- * @author hermes
- *
- */
 @Entity
 @Table(name = "tau03_cuenta")
 public class Cuenta implements Modelo {
