@@ -14,28 +14,26 @@ import mx.ipn.escom.spee.util.mapeo.Modelo;
 
 @Entity
 @Table(name = "tc01_catalogo_area")
-public class CatalogoArea implements Modelo, Serializable {
+public class EstadoPago implements Modelo, Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public enum AreaEnum {
+	public enum EstadoPagoEnum {
 
-		CELEX(1, "Centro de Lenguas Extrangeras"),
+		AUTORIZADO(1, "Pago Autorizado"),
 
-		DENTALES(2, "Servicios Dentales"),
+		REVISION(2, "Pago en Revision"),
 
-		BIBLIOTECA(3, "Servicios Biblioteca"),
-
-		FOTOCOPIADO(3, "Servicios Fotocopiado");
+		RECHAZADO(3, "Pago Rechazado");
 
 		private Integer idEstatus;
 
 		private String nombre;
 
-		private AreaEnum(Integer idEstatus, String nombre) {
+		private EstadoPagoEnum(Integer idEstatus, String nombre) {
 			this.idEstatus = idEstatus;
 			this.nombre = nombre;
 		}
@@ -52,20 +50,20 @@ public class CatalogoArea implements Modelo, Serializable {
 	@Id
 	@SequenceGenerator(name = "", sequenceName = "")
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "")
-	@Column(name = "id_area")
+	@Column(name = "id_estado_pago")
 	private Integer id;
 
-	@Column(name = "nb_area")
+	@Column(name = "nb_estado_pago")
 	private String nombre;
 
-	@Column(name = "ds_area")
+	@Column(name = "ds_descripcion")
 	private String descripcion;
 
-	public CatalogoArea() {
+	public EstadoPago() {
 		super();
 	}
 
-	public CatalogoArea(Integer id, String nombre, String descripcion) {
+	public EstadoPago(Integer id, String nombre, String descripcion) {
 		super();
 		this.id = id;
 		this.nombre = nombre;

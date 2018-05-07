@@ -9,6 +9,7 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
+import mx.ipn.escom.spee.pagos.mapeo.CatalogoArea.AreaEnum;
 import mx.ipn.escom.spee.pagos.mapeo.CatalogoServicio;
 import mx.ipn.escom.spee.util.bs.GenericSearchBs;
 
@@ -23,6 +24,7 @@ public class CatalogoServiciosBs {
 
 	public List<CatalogoServicio> obtenerServiciosTipo() {
 		CatalogoServicio catalogoServicioExample = new CatalogoServicio();
+		LOGGER.info("Se ha creado una lista de servicios celex");
 		return genericSearchBs.findByExample(catalogoServicioExample);
 	}
 
