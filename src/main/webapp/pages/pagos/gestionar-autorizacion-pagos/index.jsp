@@ -49,7 +49,7 @@
 					<tbody>
 						<s:iterator value="listPagosAutorizados" var="pagoAutorizado">
 							<tr>
-								<td>${pagoAutorizado[0]}</td>
+								<td><i class="material-icons  md-24 md-eld-green ">&#xE061;</i></td>
 								<td>${pagoAutorizado[1]}</td>
 								<td>${pagoAutorizado[2]}</td>
 								<td>${pagoAutorizado[3]}</td>
@@ -76,6 +76,24 @@
 <div class="form-group">
 	<label class="col-md-4 control-label"> <s:text name="CU14_LBL1"></s:text>
 	</label>
+</div>
+
+<div class="text-left">
+	<div class="col-md-12">
+		<label class="control-label"><i
+			class="material-icons  md-24 md-sem-green ">&#xE061;</i></label> <label><s:text
+				name="CU14_LBL2"></s:text></label>
+	</div>
+	<div class="col-md-12">
+		<label class="control-label"><i
+			class="material-icons  md-24 md-sem-yellow ">&#xE061;</i></label> <label><s:text
+				name="CU14_LBL3"></s:text></label>
+	</div>
+	<div class="col-md-12">
+		<label class="control-label"><i
+			class="material-icons  md-24 md-sem-rojo ">&#xE061;</i></label> <label><s:text
+				name="CU14_LBL4"></s:text></label>
+	</div>
 </div>
 	</html>
 </jsp:root>

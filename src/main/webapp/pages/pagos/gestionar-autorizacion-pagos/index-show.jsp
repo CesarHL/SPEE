@@ -22,25 +22,25 @@
 <div class="form-section form-horizontal">
 	<div class="form-group">
 		<div class="row">
-			<div class="col-md-12">
-				<table id="tblPagosAutorizados" class="table table-striped">
-					<thead>
-						<tr>
-						</tr>
-					</thead>
-					<tbody>
-					
-					</tbody>
-				</table>
+			<div class="div-scroll">
+			
+			
 			</div>
 		</div>
 	</div>
 </div>
 <div class="text-right">
 	<a
+		href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos!autorizarPago"
+		class="btn btn-default btn-default-eld"><s:text
+			name="mx.com.eld.boton.autorizar" /></a> <a
+		href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos!rechazarPago"
+		class="btn btn-default btn-default-eld"><s:text
+			name="mx.com.eld.boton.rechazar" /></a> <a
 		href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos/"
 		class="btn btn-default btn-default-eld"><s:text
 			name="mx.com.eld.boton.regresar" /></a>
 </div>
+
 	</html>
 </jsp:root>

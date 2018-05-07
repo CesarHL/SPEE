@@ -12,14 +12,14 @@
 			<ul class="nav" id="side-menu">
 				<li class="dropdown"><a
 					href="${pageContext.request.contextPath}/pagos/gestionar-pagos"><s:text
-							name="menu.contador.pagos" /><span class="fa arrow"></span> </a>
+							name="menu.celex.pagos" /><span class="fa arrow"></span> </a>
 					<ul class="nav nav-second-level">
 						<li class="dropdown"><a
-							href="${pageContext.request.contextPath}/pagos/gestionar-concepto-pago">
-								<s:text name="menu.contador.gestionar_conceptos" />
+							href="${pageContext.request.contextPath}/pagos/gestionar-pagos">
+								<s:text name="menu.celex.pagos.autorizados" />
 						</a> <a
-							href="${pageContext.request.contextPath}/pagos/gestionar-costo-concepto/new">
-								<s:text name="menu.contador.costo_conceptos" />
+							href="${pageContext.request.contextPath}/pagos/gestionar-archivo-pagos">
+								<s:text name="menu.celex.archivo" />
 						</a></li>
 					</ul></li>
 			</ul>

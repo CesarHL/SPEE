@@ -1,10 +1,12 @@
 package mx.edu.spee.pagos.action;
 
+import org.apache.struts2.convention.annotation.AllowedMethods;
 import org.apache.struts2.convention.annotation.Namespace;
 
 import mx.ipn.escom.spee.action.GeneralActionSupport;
 
 @Namespace("/pagos")
+@AllowedMethods({ "autorizarPago", "rechazarPago"})
 public class GestionarAutorizacionPagosAct extends GeneralActionSupport {
 
 	/**
@@ -22,5 +24,13 @@ public class GestionarAutorizacionPagosAct extends GeneralActionSupport {
 	
 	public String editNew() {
 		return EDITNEW;
+	}
+	
+	public void autorizarPago() {
+		
+	}
+	
+	public void rechazarPago() {
+		
 	}
 }
