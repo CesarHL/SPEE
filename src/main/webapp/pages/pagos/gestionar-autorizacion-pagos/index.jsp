@@ -12,9 +12,9 @@
 </jsp:text>
 
 <s:set var="listPagosAutorizados"
-	value="{{'', 'Rodrigo López Hernández', 'HELC920412HDFRPS02', '2013630206', '550.00 MXN', 'Inglés B1'},
-	 {'', 'José López Hernández', 'JELC920412HDFRPS02', 'Trabajador', '603.00 MXN', 'Inglés B2'},
-	 {'', 'Pedro López Hernández', 'PELC920412HDFRPS02', 'Externo', '600.00 MXN', 'Inglés B3'}}" />
+	value="{{1, 'Rodrigo López Hernández', 'HELC920412HDFRPS02', '2013630206', '550.00 MXN', 'Inglés B1'},
+	 {2, 'José López Hernández', 'JELC920412HDFRPS02', 'Trabajador', '603.00 MXN', 'Inglés B2'},
+	 {3, 'Pedro López Hernández', 'PELC920412HDFRPS02', 'Externo', '600.00 MXN', 'Inglés B3'}}" />
 
 <s:set var="ttbVisualizar" value="%{getText('tooltipVisualizar')}" />
 <s:set var="ttbAdjuntar" value="%{getText('tooltipAdjuntar')}" />
@@ -49,7 +49,16 @@
 					<tbody>
 						<s:iterator value="listPagosAutorizados" var="pagoAutorizado">
 							<tr>
-								<td><i class="material-icons  md-24 md-eld-green ">&#xE061;</i></td>
+								<td><s:if
+										test="%{#pagoAutorizado[0] eq @mx.ipn.escom.spee.pagos.mapeo.EstadoPago$EstadoPagoEnum@AUTORIZADO.getIdEstatus()}">
+										<i class="material-icons  md-24 md-eld-green ">&#xE061;</i>
+									</s:if> <s:elseif
+										test="%{#pagoAutorizado[0] eq @mx.ipn.escom.spee.pagos.mapeo.EstadoPago$EstadoPagoEnum@REVISION.getIdEstatus()}">
+										<i class="material-icons  md-24 md-sem-yellow ">&#xE061;</i>
+									</s:elseif> <s:elseif
+										test="%{#pagoAutorizado[0] eq @mx.ipn.escom.spee.pagos.mapeo.EstadoPago$EstadoPagoEnum@RECHAZADO.getIdEstatus()}">
+										<i class="material-icons  md-24 md-sem-rojo ">&#xE061;</i>
+									</s:elseif></td>
 								<td>${pagoAutorizado[1]}</td>
 								<td>${pagoAutorizado[2]}</td>
 								<td>${pagoAutorizado[3]}</td>

@@ -12,7 +12,9 @@
 </jsp:text>
 
 <s:set var="listPagosEnviados"
-	value="{{'', '01/02/2018', '$550 MXN', 'Celex B1'}}" />
+	value="{{1, '01/02/2018', '$550 MXN', 'Celex B1'},
+	{2, '01/02/2018', '$550 MXN', 'Celex B2'},
+	{3, '01/02/2018', '$550 MXN', 'Celex B3'}}" />
 
 <s:set var="ttbVisualizar" value="%{getText('tooltipVisualizar')}" />
 <s:set var="varIconoVisualizar" value="'&#xE415;'" />
@@ -42,7 +44,16 @@
 					<tbody>
 						<s:iterator value="listPagosEnviados" var="pagAutorizado">
 							<tr>
-								<td><i class="material-icons  md-24 md-eld-green ">&#xE061;</i></td>
+								<td><s:if
+										test="%{#pagAutorizado[0] eq @mx.ipn.escom.spee.pagos.mapeo.EstadoPago$EstadoPagoEnum@AUTORIZADO.getIdEstatus()}">
+										<i class="material-icons  md-24 md-eld-green ">&#xE061;</i>
+									</s:if> <s:elseif
+										test="%{#pagAutorizado[0] eq @mx.ipn.escom.spee.pagos.mapeo.EstadoPago$EstadoPagoEnum@REVISION.getIdEstatus()}">
+										<i class="material-icons  md-24 md-sem-yellow ">&#xE061;</i>
+									</s:elseif> <s:elseif
+										test="%{#pagAutorizado[0] eq @mx.ipn.escom.spee.pagos.mapeo.EstadoPago$EstadoPagoEnum@RECHAZADO.getIdEstatus()}">
+										<i class="material-icons  md-24 md-sem-rojo ">&#xE061;</i>
+									</s:elseif></td>
 								<td>${pagAutorizado[1]}</td>
 								<td>${pagAutorizado[2]}</td>
 								<td>${pagAutorizado[3]}</td>

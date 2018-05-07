@@ -9,12 +9,6 @@ import org.apache.struts2.convention.annotation.Results;
 
 import mx.ipn.escom.spee.action.GeneralActionSupport;
 
-/**
- * Action donde se activa la cuenta de un aspirante a la eld
- * 
- * @author CDT-ESCOM
- *
- */
 @Namespace("/control-acceso")
 @Results({
 		@Result(name = GeneralActionSupport.SUCCESS, type = "redirectAction", params = { "actionName",
