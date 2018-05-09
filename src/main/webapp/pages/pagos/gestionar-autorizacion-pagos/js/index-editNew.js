@@ -1,6 +1,25 @@
 $(function() {
 	dataTableEMETH.createSortedDataTable("tblPagosPorAutorizar", 1, "desc");
+	dataTableEMETH.createSortedDataTable("tblPagosRechazados", 1, "desc");
 });
+
+function AutorizarPago(idPago){
+	var action = $("#hdnUrlAction").val();
+	action = action + idPago;
+	$("#frmGestionarConvocatoriaAspirante").attr("action", action);
+	$("#hdnEstatusNuevo").attr("value",$("#slcListTipoContactos").val());
+	$("#lblNombreAspirante").append(nombreAspirante);
+	$.publish("showDlgIniciar");
+}
+
+function RechazarPago(idPago){
+	var action = $("#hdnUrlAction").val();
+	action = action + idPago;
+	$("#frmGestionarConvocatoriaAspirante").attr("action", action);
+	$("#hdnEstatusNuevo").attr("value",$("#slcListTipoContactos").val());
+	$("#lblNombreAspirante").append(nombreAspirante);
+	$.publish("showDlgIniciar");
+}
 
 $(function() {
 	/*

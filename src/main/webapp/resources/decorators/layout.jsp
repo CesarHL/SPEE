@@ -26,7 +26,7 @@
 	includeContext="true" />
 <sj:head debug="true" jqueryui="true" jquerytheme="custom-eld-1.0"
 	locale="es" customBasepath="%{#urlRutaContextoTema}" />
-<title><s:text name="mx.ipn.escom.title" /></title>
+<title><s:text name="Sistema de Electronicos ESCOM - IPN" /></title>
 <link rel="icon" type="image/png"
 	href="${pageContext.request.contextPath}/resources/images/ipn-logo-color.png"
 	sizes="32x32" />
@@ -115,7 +115,6 @@
 			</div>
 		</div>
 	</div>
-
 </footer>
 	</html>
 </jsp:root>

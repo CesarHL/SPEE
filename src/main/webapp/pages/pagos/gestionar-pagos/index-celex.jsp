@@ -11,16 +11,13 @@
 	]]>
 </jsp:text>
 
-<s:set var="listPagosAutorizados"
-	value="{{ 'César Erick Hernández López', 'HELC920704HDFRPS03', '2013630206', '01/May/2018', '$550 MXN', 'Celex B1'}}" />
-
 <s:set var="ttbVisualizar" value="%{getText('tooltipVisualizar')}" />
 <s:set var="varIconoVisualizar" value="'&#xE415;'" />
 
 <div class="row title">
 	<div class="col-md-12">
 		<h1 class="title">
-			<s:text name="CU98_TITLE" />
+			<s:text name="Gestionar Pagos" />
 		</h1>
 	</div>
 </div>
@@ -32,25 +29,26 @@
 				<table id="tblPagosEnviados" class="table table-striped">
 					<thead>
 						<tr>
-							<th><s:text name="CU98_THEAD1" /></th>
-							<th><s:text name="CU98_THEAD2" /></th>
-							<th><s:text name="CU98_THEAD3" /></th>
-							<th><s:text name="CU98_THEAD4" /></th>
-							<th><s:text name="CU98_THEAD5" /></th>
-							<th><s:text name="CU98_THEAD6" /></th>
-							<th><s:text name="CU98_THEAD7" /></th>
+							<th><s:text name="Nombre" /></th>
+							<th><s:text name="CURP" /></th>
+							<th><s:text name="Boleta" /></th>
+							<th><s:text name="Fecha" /></th>
+							<th><s:text name="Concepto" /></th>
+							<th><s:text name="Cantidad" /></th>
+							<th><s:text name="Acciones" /></th>
 						</tr>
 					</thead>
 					<tbody>
-						<s:iterator value="listPagosAutorizados" var="pagAutorizado">
+						<s:iterator value="listPagos" var="pagAutorizadoCelex">
+						<s:set var="alumno" value="%{pagoBs.obtenerAlumno(#pagAutorizadoCelex.idUsuario)}"></s:set>
 							<tr>
-								<td>${pagAutorizado[0]}</td>
-								<td>${pagAutorizado[1]}</td>
-								<td>${pagAutorizado[2]}</td>
-								<td>${pagAutorizado[3]}</td>
-								<td>${pagAutorizado[4]}</td>
-								<td>${pagAutorizado[5]}</td>
-								<td><a href="#" title="${ttbVisualizar}"> <i
+								<td>${alumno }</td>
+								<td>${alumno.curp }</td>
+								<td>${alumno.boleta }</td>
+								<td><s:date name="%{#pagAutorizadoCelex.fechaEnvio}" format="yyyy-MM-dd"/> </td>
+								<td>${pagAutorizadoCelex.catalogoServicio.servicio}</td>
+								<td>$ ${pagAutorizadoCelex.catalogoServicio.monto} MXN</td>
+								<td><a href="#" title="Visualizar Pago"> <i
 										class="material-icons md-24 md-eld">${varIconoVisualizar}</i>
 								</a></td>
 							</tr>

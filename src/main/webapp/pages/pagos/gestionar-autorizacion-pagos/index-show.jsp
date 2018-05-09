@@ -14,7 +14,7 @@
 <div class="row title">
 	<div class="col-md-12">
 		<h1 class="title">
-			<s:text name="CU16_TITLE" />
+			<s:text name="Visualizar Comprobante de Pago" />
 		</h1>
 	</div>
 </div>
@@ -31,15 +31,15 @@
 </div>
 <div class="text-right">
 	<a
-		href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos!autorizarPago"
+		href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos!autorizarPago?${idSel}"
 		class="btn btn-default btn-default-eld"><s:text
-			name="mx.com.eld.boton.autorizar" /></a> <a
-		href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos!rechazarPago"
+			name="Autorizar" /></a> <a
+		href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos!rechazarPago?${idSel}"
 		class="btn btn-default btn-default-eld"><s:text
-			name="mx.com.eld.boton.rechazar" /></a> <a
+			name="Rechazar" /></a> <a
 		href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos/"
 		class="btn btn-default btn-default-eld"><s:text
-			name="mx.com.eld.boton.regresar" /></a>
+			name="Regresar" /></a>
 </div>
 
 	</html>

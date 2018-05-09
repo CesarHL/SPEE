@@ -11,11 +11,6 @@
 	]]>
 </jsp:text>
 
-<s:set var="listPagosAutorizados"
-	value="{{1, 'Rodrigo López Hernández', 'HELC920412HDFRPS02', '2013630206', '550.00 MXN', 'Inglés B1'},
-	 {2, 'José López Hernández', 'JELC920412HDFRPS02', 'Trabajador', '603.00 MXN', 'Inglés B2'},
-	 {3, 'Pedro López Hernández', 'PELC920412HDFRPS02', 'Externo', '600.00 MXN', 'Inglés B3'}}" />
-
 <s:set var="ttbVisualizar" value="%{getText('tooltipVisualizar')}" />
 <s:set var="ttbAdjuntar" value="%{getText('tooltipAdjuntar')}" />
 
@@ -25,10 +20,24 @@
 <div class="row title">
 	<div class="col-md-12">
 		<h1 class="title">
-			<s:text name="CU14_TITLE" />
+			<s:text name="Autorizar Pagos" />
 		</h1>
 	</div>
 </div>
+
+<div class="text-left">
+	<div class="col-md-12">
+		<label class="control-label"><i
+			class="material-icons  md-24 md-sem-yellow ">&#xE061;</i></label> <label><s:text
+				name="Pagos Por Autorizar"></s:text></label>
+	</div>
+	<div class="col-md-12">
+		<label class="control-label"><i
+			class="material-icons  md-24 md-sem-rojo ">&#xE061;</i></label> <label><s:text
+				name="Pagos Rechazados"></s:text></label>
+	</div>
+</div>
+
 
 <div class="form-section form-horizontal">
 	<div class="form-group">
@@ -37,41 +46,46 @@
 				<table id="tblPagosPorAutorizar" class="table table-striped">
 					<thead>
 						<tr>
-							<th><s:text name="CU14_THEAD1" /></th>
-							<th><s:text name="CU14_THEAD2" /></th>
-							<th><s:text name="CU14_THEAD3" /></th>
-							<th><s:text name="CU14_THEAD4" /></th>
-							<th><s:text name="CU14_THEAD5" /></th>
-							<th><s:text name="CU14_THEAD6" /></th>
-							<th><s:text name="CU14_THEAD7" /></th>
+							<th><s:text name="Estado" /></th>
+							<th><s:text name="Nombre" /></th>
+							<th><s:text name="CURP" /></th>
+							<th><s:text name="Boleta" /></th>
+							<th><s:text name="Fecha" /></th>
+							<th><s:text name="Concepto" /></th>
+							<th><s:text name="Cantidad" /></th>
+							<th><s:text name="Acciones" /></th>
 						</tr>
 					</thead>
 					<tbody>
-						<s:iterator value="listPagosAutorizados" var="pagoAutorizado">
+						<s:iterator value="listArchivoPagosRevision"
+							var="pagoPorAutorizar">
+							<s:set var="alumno" value="%{pagoBs.obtenerAlumno(#pagoPorAutorizar.idUsuario)}"></s:set>
 							<tr>
 								<td><s:if
-										test="%{#pagoAutorizado[0] eq @mx.ipn.escom.spee.pagos.mapeo.EstadoPago$EstadoPagoEnum@AUTORIZADO.getIdEstatus()}">
+										test="%{#pagoPorAutorizar.idEstado eq @mx.ipn.escom.spee.pagos.mapeo.EstadoPago$EstadoPagoEnum@AUTORIZADO.getIdEstatus()}">
 										<i class="material-icons  md-24 md-eld-green ">&#xE061;</i>
 									</s:if> <s:elseif
-										test="%{#pagoAutorizado[0] eq @mx.ipn.escom.spee.pagos.mapeo.EstadoPago$EstadoPagoEnum@REVISION.getIdEstatus()}">
+										test="%{#pagoPorAutorizar.idEstado eq @mx.ipn.escom.spee.pagos.mapeo.EstadoPago$EstadoPagoEnum@REVISION.getIdEstatus()}">
 										<i class="material-icons  md-24 md-sem-yellow ">&#xE061;</i>
 									</s:elseif> <s:elseif
-										test="%{#pagoAutorizado[0] eq @mx.ipn.escom.spee.pagos.mapeo.EstadoPago$EstadoPagoEnum@RECHAZADO.getIdEstatus()}">
+										test="%{#pagoPorAutorizar.idEstado eq @mx.ipn.escom.spee.pagos.mapeo.EstadoPago$EstadoPagoEnum@RECHAZADO.getIdEstatus()}">
 										<i class="material-icons  md-24 md-sem-rojo ">&#xE061;</i>
 									</s:elseif></td>
-								<td>${pagoAutorizado[1]}</td>
-								<td>${pagoAutorizado[2]}</td>
-								<td>${pagoAutorizado[3]}</td>
-								<td>${pagoAutorizado[4]}</td>
-								<td>${pagoAutorizado[5]}</td>
-
+								
+								<td>${alumno}</td>
+								<td>${alumno.boleta}</td>
+								<td>${alumno.curp}</td>
+								<td><s:date name="%{#pagoPorAutorizar.fechaEnvio}"
+										format="yyyy-MM-dd" /></td>
+								<td>${pagoPorAutorizar.catalogoServicio.servicio}</td>
+								<td>$ ${pagoPorAutorizar.catalogoServicio.monto} MXN</td>
 								<td><a
-									href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos/show"
-									title="${ttbVisualizar}"> <i
+									href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos/idSel=${pagoPorAutorizar.id}"
+									title="Visualizar Comprobante"> <i
 										class="material-icons md-24 md-eld">${varIconoVisualizar}</i>
 								</a><a
 									href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos/new"
-									title="${ttbAdjuntar}"> <i
+									title="Adjuntar Comprobante Sigga"> <i
 										class="material-icons md-24 md-eld">${varIconoAdjuntar}</i>
 								</a></td>
 							</tr>
@@ -80,28 +94,6 @@
 				</table>
 			</div>
 		</div>
-	</div>
-</div>
-<div class="form-group">
-	<label class="col-md-4 control-label"> <s:text name="CU14_LBL1"></s:text>
-	</label>
-</div>
-
-<div class="text-left">
-	<div class="col-md-12">
-		<label class="control-label"><i
-			class="material-icons  md-24 md-sem-green ">&#xE061;</i></label> <label><s:text
-				name="CU14_LBL2"></s:text></label>
-	</div>
-	<div class="col-md-12">
-		<label class="control-label"><i
-			class="material-icons  md-24 md-sem-yellow ">&#xE061;</i></label> <label><s:text
-				name="CU14_LBL3"></s:text></label>
-	</div>
-	<div class="col-md-12">
-		<label class="control-label"><i
-			class="material-icons  md-24 md-sem-rojo ">&#xE061;</i></label> <label><s:text
-				name="CU14_LBL4"></s:text></label>
 	</div>
 </div>
 	</html>

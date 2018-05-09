@@ -47,8 +47,8 @@
 	</div>
 
 	<div class="col-md-12 text-right">
-		<a id="btnDialogAcept" class="btn btn-default btn-default-eld"
-			href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos">
+		<s:submit id="btnDialogAcept" class="btn btn-default btn-default-eld"
+			href="${pageContext.request.contextPath}/pagos/cargar-pago/new">
 			<s:text name="mx.com.eld.boton.aceptar" />
 		</a> <a
 			href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos"

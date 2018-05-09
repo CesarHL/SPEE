@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import mx.ipn.escom.spee.action.GeneralActionSupport;
 import mx.ipn.escom.spee.pagos.bs.CatalogoServiciosBs;
 import mx.ipn.escom.spee.pagos.mapeo.CatalogoServicio;
+import mx.ipn.escom.spee.util.bs.GenericSearchBs;
 
 @Namespace("/pagos")
 @AllowedMethods({ "visualizarServiciosCelex", "visualizarServiciosDentales", "visualizarServiciosFotocopiado",
@@ -22,15 +23,18 @@ public class ConsultarServiciosAct extends GeneralActionSupport {
 
 	@Autowired
 	private CatalogoServiciosBs catalogoServiciosBs;
+	
+	@Autowired
+	private GenericSearchBs genericSearchBs;
 
 	private List<CatalogoServicio> listCatalogoServicios;
 
 	public String index() {
+		listCatalogoServicios = genericSearchBs.findAll(CatalogoServicio.class);
 		return INDEX;
 	}
 
 	public String visualizarServiciosCelex() {
-		listCatalogoServicios = catalogoServiciosBs.obtenerServiciosTipo();
 		return "visualizarServiciosCelex";
 	}
 
@@ -61,5 +65,15 @@ public class ConsultarServiciosAct extends GeneralActionSupport {
 	public void setListCatalogoServicios(List<CatalogoServicio> listCatalogoServicios) {
 		this.listCatalogoServicios = listCatalogoServicios;
 	}
+
+	public GenericSearchBs getGenericSearchBs() {
+		return genericSearchBs;
+	}
+
+	public void setGenericSearchBs(GenericSearchBs genericSearchBs) {
+		this.genericSearchBs = genericSearchBs;
+	}
+	
+	
 
 }

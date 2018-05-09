@@ -1,12 +1,14 @@
 package mx.ipn.escom.spee.pagos.mapeo;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -51,25 +53,18 @@ public class CatalogoArea implements Modelo, Serializable {
 
 	@Id
 	@SequenceGenerator(name = "", sequenceName = "")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "")
-	@Column(name = "id_area")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_area_pago")
 	private Integer id;
-
+	
 	@Column(name = "nb_area")
-	private String nombre;
+	private String nombreArea;
 
-	@Column(name = "ds_area")
-	private String descripcion;
+	@OneToMany(mappedBy = "catalogoArea")
+	private List<ArchivoPagoDia> listArchivosPago;
 
 	public CatalogoArea() {
 		super();
-	}
-
-	public CatalogoArea(Integer id, String nombre, String descripcion) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.descripcion = descripcion;
 	}
 
 	public Integer getId() {
@@ -80,20 +75,22 @@ public class CatalogoArea implements Modelo, Serializable {
 		this.id = id;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getNombreArea() {
+		return nombreArea;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNombreArea(String nombreArea) {
+		this.nombreArea = nombreArea;
 	}
 
-	public String getDescripcion() {
-		return descripcion;
+	public List<ArchivoPagoDia> getListArchivosPago() {
+		return listArchivosPago;
 	}
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+	public void setListArchivosPago(List<ArchivoPagoDia> listArchivosPago) {
+		this.listArchivosPago = listArchivosPago;
 	}
 
+	
+	
 }

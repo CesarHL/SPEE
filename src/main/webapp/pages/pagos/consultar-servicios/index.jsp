@@ -7,22 +7,17 @@
 
 <jsp:text>
 	<![CDATA[                 
-	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/pagos/gestionar-archivo-pagos/js/index.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/pagos/consultar-servicios/js/index.js"></script>
 	]]>
 </jsp:text>
 
-<s:set var="listTiposContacto"
-	value="{{'01/02/2018','Celex'},
-	 {'01/02/2018', 'Celex'},
-	 {'01/02/2018', 'Servicios Dentales'}}" />
-
-<s:set var="ttbVisualizar" value="%{getText('tooltipVisualizar')}" />
-<s:set var="varIconoVisualizar" value="'&#xE8F4;'" />
+<s:set var="varIconoBancomer" value="'&#xE8A1;'" />
+<s:set var="varIconoAdjuntar" value="'&#xE5D8;'" />
 
 <div class="row title">
 	<div class="col-md-12">
 		<h1 class="title">
-			<s:text name="CU90_TITLE" />
+			<s:text name="Visualizar Servicios" />
 		</h1>
 	</div>
 </div>
@@ -30,7 +25,7 @@
 <div class="form-medium">
 	<div class="row">
 		<label class="col-md-4 text-left control-label"> <s:text
-				name="CU90_LBL1">
+				name="Nombre">
 			</s:text>
 		</label><label class="col-md-4 text-left"> César Erick Hernández López
 		</label>
@@ -38,37 +33,53 @@
 	</div>
 	<div class="row">
 		<label class="col-md-4 text-left control-label"> <s:text
-				name="CU90_LBL2">
+				name="CURP">
 			</s:text>
 		</label> <label class="col-md-4 text-left"> HELC920407HDFRPS03 </label>
 	</div>
 	<div class="row">
 		<label class="col-md-4 text-left control-label"> <s:text
-				name="CU90_LBL3">
+				name="Boleta">
 			</s:text>
 		</label> <label class="col-md-4 text-left"> 2013630206 </label>
 	</div>
-	<div class="row">
-		<label class="col-md-4 text-left control-label"> <s:text
-				name="CU90_LBL4">
-			</s:text>
-		</label> <label class="col-md-4 text-left"> 000001 </label>
-	</div>
-
 </div>
 
-<div class="form-medium">
-	<label class="col-md-4 control-label" for=""><s:text
-			name="CU90_LBL5" /></label>
-	<div class="col-md-7 col-contact">
-		<s:select id="slcListTipoContactos" list="%{#listTiposContacto[0]}"
-			name="Seleccione" listValue="nombre" listKey="id" headerKey="-1"
-			headerValue="Seleccione" cssClass="form-control" required="true"
-			cssErrorClass="error" />
-	</div>
-	<div class="col-md-1">
-		<a href="${pageContext.request.contextPath}/pagos/consultar-servicios!visualizarServiciosCelex" class="btn btn-default btn-default-eld"><s:text
-				name="%{getText('mx.com.eld.boton.mostrar')}" /></a>
+<div class="form-section form-horizontal">
+	<div class="form-group">
+		<div class="row">
+			<div class="col-md-12">
+				<table id="tblServicios" class="table table-striped">
+					<thead>
+						<tr>
+							<th><s:text name="Concepto" /></th>
+							<th><s:text name="Costo" /></th>
+
+							<th><s:text name="Area" /></th>
+							<th><s:text name="Acciones" /></th>
+						</tr>
+					</thead>
+					<tbody>
+						<s:iterator value="listCatalogoServicios" var="oservicio">
+							<tr>
+								<td>${oservicio.servicio}</td>
+								<td><s:text name="$"></s:text> ${oservicio.monto}<s:text
+										name=" MXN"></s:text></td>
+
+								<td>${oservicio.idArea}</td>
+								<td><a
+									href="${pageContext.request.contextPath}/pagos/cargar-pago/new?idServicio=${oservicio.clave}"
+									title="Adjuntar Archivo"> <i
+										class="material-icons md-24 md-eld">${varIconoAdjuntar}</i>
+								</a><a href="#" title="Pagar en Bancomer"> <i
+										class="material-icons md-24 md-eld">${varIconoBancomer}</i>
+								</a></td>
+							</tr>
+						</s:iterator>
+					</tbody>
+				</table>
+			</div>
+		</div>
 	</div>
 </div>
 

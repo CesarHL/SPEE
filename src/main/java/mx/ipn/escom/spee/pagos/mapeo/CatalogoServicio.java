@@ -4,19 +4,16 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import mx.ipn.escom.spee.util.mapeo.Modelo;
 
 @Entity
-@Table(name = "tc02_catalogo_servicio")
+@Table(name = "tc02_catalogo_servicios")
 public class CatalogoServicio implements Modelo, Serializable {
 
 	/**
@@ -26,37 +23,37 @@ public class CatalogoServicio implements Modelo, Serializable {
 
 	@Id
 	@SequenceGenerator(name = "", sequenceName = "")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "")
-	@Column(name = "id_catalogo_servicio")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_catalogo")
 	private Integer id;
 
-	@Column(name = "tx_clave")
+	@Column(name = "nu_clave")
 	private String clave;
 
-	@Column(name = "tx_tipo")
+	@Column(name = "ds_tipo")
 	private String tipo;
 
-	@Column(name = "ds_descripcion")
-	private String descripcion;
+	@Column(name = "nu_monto")
+	private Double monto;
 
-	@Column(name = "nu_precio")
-	private Double precio;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id_area", referencedColumnName = "id_area", insertable = false, updatable = false)
-	private CatalogoArea catalogoArea;
+	@Column(name = "nb_servicio")
+	private String servicio;
+
+	@Column(name = "nu_area")
+	private Integer idArea;
 
 	public CatalogoServicio() {
 		super();
 	}
 
-	public CatalogoServicio(Integer id, String clave, String tipo, String descripcion, Double precio) {
+	public CatalogoServicio(Integer id, String clave, String tipo, Double monto, String servicio, Integer area) {
 		super();
 		this.id = id;
 		this.clave = clave;
 		this.tipo = tipo;
-		this.descripcion = descripcion;
-		this.precio = precio;
+		this.monto = monto;
+		this.servicio = servicio;
+		this.idArea = area;
 	}
 
 	public Integer getId() {
@@ -83,20 +80,28 @@ public class CatalogoServicio implements Modelo, Serializable {
 		this.tipo = tipo;
 	}
 
-	public String getDescripcion() {
-		return descripcion;
+	public Double getMonto() {
+		return monto;
 	}
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+	public void setMonto(Double monto) {
+		this.monto = monto;
 	}
 
-	public Double getPrecio() {
-		return precio;
+	public String getServicio() {
+		return servicio;
 	}
 
-	public void setPrecio(Double precio) {
-		this.precio = precio;
+	public void setServicio(String servicio) {
+		this.servicio = servicio;
+	}
+
+	public Integer getIdArea() {
+		return idArea;
+	}
+
+	public void setIdArea(Integer idArea) {
+		this.idArea = idArea;
 	}
 
 }

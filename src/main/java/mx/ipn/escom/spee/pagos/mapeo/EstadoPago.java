@@ -1,19 +1,21 @@
 package mx.ipn.escom.spee.pagos.mapeo;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import mx.ipn.escom.spee.util.mapeo.Modelo;
 
 @Entity
-@Table(name = "tc01_catalogo_area")
+@Table(name = "tc09_estado_archivo")
 public class EstadoPago implements Modelo, Serializable {
 
 	/**
@@ -49,26 +51,15 @@ public class EstadoPago implements Modelo, Serializable {
 
 	@Id
 	@SequenceGenerator(name = "", sequenceName = "")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "")
-	@Column(name = "id_estado_pago")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_estado")
 	private Integer id;
 
-	@Column(name = "nb_estado_pago")
-	private String nombre;
+	@Column(name = "nb_estado")
+	private String nombreEstado;
 
-	@Column(name = "ds_descripcion")
-	private String descripcion;
-
-	public EstadoPago() {
-		super();
-	}
-
-	public EstadoPago(Integer id, String nombre, String descripcion) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.descripcion = descripcion;
-	}
+	@OneToMany(mappedBy = "estadoArchivo")
+	private List<ArchivoPagoDia> listArchivosPago;
 
 	public Integer getId() {
 		return id;
@@ -78,20 +69,20 @@ public class EstadoPago implements Modelo, Serializable {
 		this.id = id;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getNombreEstado() {
+		return nombreEstado;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setNombreEstado(String nombreEstado) {
+		this.nombreEstado = nombreEstado;
 	}
 
-	public String getDescripcion() {
-		return descripcion;
+	public List<ArchivoPagoDia> getListArchivosPago() {
+		return listArchivosPago;
 	}
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+	public void setListArchivosPago(List<ArchivoPagoDia> listArchivosPago) {
+		this.listArchivosPago = listArchivosPago;
 	}
 
 }

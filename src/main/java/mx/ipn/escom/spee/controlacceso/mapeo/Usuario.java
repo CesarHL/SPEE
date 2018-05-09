@@ -26,15 +26,6 @@ import com.opensymphony.xwork2.validator.annotations.ValidatorType;
 
 import mx.ipn.escom.spee.util.mapeo.Modelo;
 
-/**
- * Las personas registradas catalogadas como Usuarios son aquellas personas que
- * podrán ingresar al sistema mediante un mecanismo de autenticación basado en
- * usuario y contraseña.
- * 
- * @author CDT-ESCOM
- *
- */
-
 @Entity
 @Table(name = "tau02_usuario")
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -75,19 +66,6 @@ public class Usuario implements Modelo, Serializable {
 	@Transient
 	private Perfil PerfilActivo;
 
-	/**
-	 * Información de acceso del usuario
-	 */
-	@OneToOne
-	@JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario", insertable = false, updatable = false)
-	private Acceso acceso;
-
-	/**
-	 * Contiene las cuentas asociadas al usuario
-	 */
-	@OneToMany(fetch = FetchType.EAGER)
-	@JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario", insertable = false, updatable = false)
-	private List<Cuenta> cuentas;
 
 	/**
 	 * Constructor por defecto de un usuario
@@ -190,35 +168,6 @@ public class Usuario implements Modelo, Serializable {
 		this.confirmPassword = confirmPassword;
 	}
 
-	/**
-	 * @return the acceso
-	 */
-	public Acceso getAcceso() {
-		return acceso;
-	}
-
-	/**
-	 * @param acceso
-	 *            the acceso to set
-	 */
-	public void setAcceso(Acceso acceso) {
-		this.acceso = acceso;
-	}
-
-	/**
-	 * @return el atributo cuentas
-	 */
-	public List<Cuenta> getCuentas() {
-		return cuentas;
-	}
-
-	/**
-	 * @param cuentas
-	 *            Es el atributo cuentas a asignar
-	 */
-	public void setCuentas(List<Cuenta> cuentas) {
-		this.cuentas = cuentas;
-	}
 
 	/**
 	 * @return the perfilActivo

@@ -11,18 +11,13 @@
 	]]>
 </jsp:text>
 
-<s:set var="listPagosEnviados"
-	value="{{1, '01/02/2018', '$550 MXN', 'Celex B1'},
-	{2, '01/02/2018', '$550 MXN', 'Celex B2'},
-	{3, '01/02/2018', '$550 MXN', 'Celex B3'}}" />
-
 <s:set var="ttbVisualizar" value="%{getText('tooltipVisualizar')}" />
 <s:set var="varIconoVisualizar" value="'&#xE415;'" />
 
 <div class="row title">
 	<div class="col-md-12">
 		<h1 class="title">
-			<s:text name="CU15_TITLE" />
+			<s:text name="Gestionar Pagos" />
 		</h1>
 	</div>
 </div>
@@ -34,30 +29,30 @@
 				<table id="tblPagosEnviados" class="table table-striped">
 					<thead>
 						<tr>
-							<th><s:text name="CU15_THEAD1" /></th>
-							<th><s:text name="CU15_THEAD2" /></th>
-							<th><s:text name="CU15_THEAD3" /></th>
-							<th><s:text name="CU15_THEAD4" /></th>
-							<th><s:text name="CU15_THEAD5" /></th>
+							<th><s:text name="Estado" /></th>
+							<th><s:text name="Fecha" /></th>
+							<th><s:text name="Concepto" /></th>
+							<th><s:text name="Costo" /></th>
+							<th><s:text name="Acciones" /></th>
 						</tr>
 					</thead>
 					<tbody>
-						<s:iterator value="listPagosEnviados" var="pagAutorizado">
+						<s:iterator value="listPagos" var="pagAutorizado">
 							<tr>
 								<td><s:if
-										test="%{#pagAutorizado[0] eq @mx.ipn.escom.spee.pagos.mapeo.EstadoPago$EstadoPagoEnum@AUTORIZADO.getIdEstatus()}">
+										test="%{#pagAutorizado.estadoArchivo.id eq @mx.ipn.escom.spee.pagos.mapeo.EstadoPago$EstadoPagoEnum@AUTORIZADO.getIdEstatus()}">
 										<i class="material-icons  md-24 md-eld-green ">&#xE061;</i>
 									</s:if> <s:elseif
-										test="%{#pagAutorizado[0] eq @mx.ipn.escom.spee.pagos.mapeo.EstadoPago$EstadoPagoEnum@REVISION.getIdEstatus()}">
+										test="%{#pagAutorizado.estadoArchivo.id  eq @mx.ipn.escom.spee.pagos.mapeo.EstadoPago$EstadoPagoEnum@REVISION.getIdEstatus()}">
 										<i class="material-icons  md-24 md-sem-yellow ">&#xE061;</i>
 									</s:elseif> <s:elseif
-										test="%{#pagAutorizado[0] eq @mx.ipn.escom.spee.pagos.mapeo.EstadoPago$EstadoPagoEnum@RECHAZADO.getIdEstatus()}">
+										test="%{#pagAutorizado.estadoArchivo.id  eq @mx.ipn.escom.spee.pagos.mapeo.EstadoPago$EstadoPagoEnum@RECHAZADO.getIdEstatus()}">
 										<i class="material-icons  md-24 md-sem-rojo ">&#xE061;</i>
 									</s:elseif></td>
-								<td>${pagAutorizado[1]}</td>
-								<td>${pagAutorizado[2]}</td>
-								<td>${pagAutorizado[3]}</td>
-								<td><a href="#" title="${ttbVisualizar}"> <i
+								<td><s:date name="%{#pagAutorizado.fechaEnvio}" format="yyyy-MM-dd"/> </td>
+								<td>${pagAutorizado.catalogoServicio.servicio}</td>
+								<td>$ 	${pagAutorizado.catalogoServicio.monto} MXN</td>
+								<td><a href="#" title="Visualizar Archivo de Pago"> <i
 										class="material-icons md-24 md-eld">${varIconoVisualizar}</i>
 								</a></td>
 							</tr>
@@ -72,17 +67,17 @@
 	<div class="col-md-12">
 		<label class="control-label"><i
 			class="material-icons  md-24 md-sem-green ">&#xE061;</i></label> <label><s:text
-				name="CU15_LBL1"></s:text></label>
+				name="Pago autorizado por caja"></s:text></label>
 	</div>
 	<div class="col-md-12">
 		<label class="control-label"><i
 			class="material-icons  md-24 md-sem-yellow ">&#xE061;</i></label> <label><s:text
-				name="CU15_LBL2"></s:text></label>
+				name="Pago en espera de ser procesado"></s:text></label>
 	</div>
 	<div class="col-md-12">
 		<label class="control-label"><i
 			class="material-icons  md-24 md-sem-rojo ">&#xE061;</i></label> <label><s:text
-				name="CU15_LBL3"></s:text></label>
+				name="Pago rechazado"></s:text></label>
 	</div>
 </div>
 	</html>
