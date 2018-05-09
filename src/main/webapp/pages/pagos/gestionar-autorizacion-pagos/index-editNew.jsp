@@ -8,7 +8,7 @@
 <jsp:text>
 	<![CDATA[                 
 	<script
-		src="${pageContext.request.contextPath}/pages/pagos/gestionar-autorizacion-pagos/js/index-editNew.js"
+		src="${pageContext.request.contextPath}/pages/pagos/cargar-pago/js/index-editNew.js"
 		type="text/javascript"></script>
 	]]>
 </jsp:text>
@@ -17,44 +17,54 @@
 	<div class="row title">
 		<div class="col-md-12">
 			<h1 class="title">
-				<s:text name="CU41_TITLE" />
+				<s:text name="Cargar Comprobante SIG@" />
 			</h1>
 		</div>
 	</div>
 
-	<s:property value="getText('CU41_LBL2')" />
-	<div class="text-center">
-		<ul>
-			<li><s:property value="getText('CU41_LBL3')" /></li>
-		</ul>
-	</div>
-	<div class="form-group">
-		<label class="col-md-4 control-label"> <s:text
-				name="CU41_LBL4"></s:text>
-		</label>
-		<div class="col-md-6">
-			<s:textfield cssClass="form-control" cssClassError="input-error"
-				name="" id="txArchivo" />
-			<s:fielderror fieldName="" cssClass="error" theme="" />
+	<s:form id="frmActualizarEstadoPago" enctype="multipart/form-data"
+		action="%{#pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos"
+		theme="simple" method="post">
+		<s:hidden name="idServicio" value="%{idServicio}"></s:hidden>
+		<fieldset
+			class="form-section form-horizontal form-medium text-justify">
+			<label> <s:text
+					name="El archivo que proporciona representa un pago oficial y debe contar con lo siguiente: " />
+			</label>
+			<div class="text-left">
+				<ul>
+					<li>El formato debe ser .pdf</li>
+					<li>Debe poderse visualizar claramente</li>
+				</ul>
+			</div>
+			<div class="form-group">
+				<label class="col-md-4 control-label "> <s:text
+						name="Nombre "></s:text>
+				</label>
+				<div class="col-md-6">
+					<div class="input-group">
+						<input type="text" class="form-control" id="fileName"
+							readonly="true" /> <span class="input-group-btn" id="loadImage">
+							<i class="material-icons md-24 md-eld">file_upload</i>
+						</span>
+					</div>
+					<s:fielderror fieldName="archivo.fileUpload" cssClass="error"
+						theme="bootstrap" />
+				</div>
+				<div class="col-xs-12 col-sm-8 col-md-1">
+					<input type='file' id="fileUpload" name="archivo.fileUpload"
+						class="hide" accept=".pdf" value="" />
+				</div>
+			</div>
+		</fieldset>
+		<div class="col-md-12 text-right">
+			<s:submit cssClass="btn btn-default btn-default-eld"
+				value="Aceptar"></s:submit>
+			<a
+				href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos"
+				class="btn btn-default btn-default-eld"><s:text name="Cancelar" /></a>
 		</div>
-		<div class="col-xs-12 col-sm-8 col-md-1">
-			<span class="input-group-btn" id="loadImage"> <i
-				class="material-icons md-24 md-eld"
-				onclick="selectImage('fileIdentificacion');">file_upload</i>
-			</span> <input type='file' id="fileIdentificacion" name="fileIdentificacion"
-				class="hide" accept=".pdf" value="" />
-		</div>
-	</div>
-
-	<div class="col-md-12 text-right">
-		<s:submit id="btnDialogAcept" class="btn btn-default btn-default-eld"
-			href="${pageContext.request.contextPath}/pagos/cargar-pago/new">
-			<s:text name="mx.com.eld.boton.aceptar" />
-		</a> <a
-			href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos"
-			class="btn btn-default btn-default-eld"><s:text
-				name="mx.com.eld.boton.cancelar" /></a>
-	</div>
+	</s:form>
 </body>
 	</html>
 </jsp:root>

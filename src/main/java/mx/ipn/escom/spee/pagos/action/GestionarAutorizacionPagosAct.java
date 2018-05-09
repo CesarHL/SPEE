@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import mx.ipn.escom.spee.action.GeneralActionSupport;
 import mx.ipn.escom.spee.pagos.bs.PagoBs;
 import mx.ipn.escom.spee.pagos.mapeo.ArchivoPagoDia;
-import mx.ipn.escom.spee.pagos.mapeo.EstadoPago.EstadoPagoEnum;
 import mx.ipn.escom.spee.util.bs.GenericSearchBs;
 
 @Namespace("/pagos")
@@ -41,7 +40,7 @@ public class GestionarAutorizacionPagosAct extends GeneralActionSupport {
 	private List<ArchivoPagoDia> listArchivoPagosRevision;
 
 	public String index() {
-		 listArchivoPagosRevision = pagoBs.obtenerPagosPorAutorizar();
+		listArchivoPagosRevision = pagoBs.obtenerPagosPorAutorizar();
 		return INDEX;
 	}
 
@@ -51,6 +50,11 @@ public class GestionarAutorizacionPagosAct extends GeneralActionSupport {
 
 	public String editNew() {
 		return EDITNEW;
+	}
+
+	public String create() {
+		addActionMessage("Se adjunto el comprobante exitosamente");
+		return SUCCESS;
 	}
 
 	public String autorizarPago() {

@@ -39,6 +39,7 @@ public class CargarPagoAct extends GeneralActionSupport {
 
 	public void validateCreate() {
 		getUsuarioSel();
+		getIdServicio();
 		pagoBs.registrarPago(archivo, usuarioSel, idServicio);
 	}
 

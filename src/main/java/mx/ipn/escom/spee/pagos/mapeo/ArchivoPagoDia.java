@@ -37,9 +37,12 @@ public class ArchivoPagoDia implements Modelo, Serializable {
 
 	@Column(name = "id_estado")
 	private Integer idEstado;
-	
+
 	@Column(name = "id_servicio_area")
 	private Integer idArea;
+
+	@Column(name = "id_catalogo_servicios")
+	private Integer idCatalogoServicios;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "id_usuario", referencedColumnName = "id_usuario", insertable = false, updatable = false)
@@ -142,7 +145,13 @@ public class ArchivoPagoDia implements Modelo, Serializable {
 	public void setIdArea(Integer idArea) {
 		this.idArea = idArea;
 	}
-	
-	
+
+	public Integer getIdCatalogoServicios() {
+		return idCatalogoServicios;
+	}
+
+	public void setIdCatalogoServicios(Integer idCatalogoServicios) {
+		this.idCatalogoServicios = idCatalogoServicios;
+	}
 
 }

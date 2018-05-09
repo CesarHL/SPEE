@@ -25,6 +25,7 @@
 	<s:form id="frmActualizarEstadoPago" enctype="multipart/form-data"
 		action="%{#pageContext.request.contextPath}/pagos/cargar-pago"
 		theme="simple" method="post">
+		<s:hidden name="idServicio" value="%{idServicio}"></s:hidden>
 		<fieldset
 			class="form-section form-horizontal form-medium text-justify">
 			<label> <s:text

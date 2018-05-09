@@ -54,7 +54,6 @@
 						<tr>
 							<th><s:text name="Concepto" /></th>
 							<th><s:text name="Costo" /></th>
-
 							<th><s:text name="Area" /></th>
 							<th><s:text name="Acciones" /></th>
 						</tr>
@@ -65,8 +64,18 @@
 								<td>${oservicio.servicio}</td>
 								<td><s:text name="$"></s:text> ${oservicio.monto}<s:text
 										name=" MXN"></s:text></td>
-
-								<td>${oservicio.idArea}</td>
+								<td><s:if
+										test="%{#oservicio.idArea eq @mx.ipn.escom.spee.pagos.mapeo.CatalogoArea$AreaEnum@CELEX.getIdEstatus()}">
+										CELEX
+									</s:if> <s:elseif
+										test="%{#oservicio.idArea eq @mx.ipn.escom.spee.pagos.mapeo.CatalogoArea$AreaEnum@DENTALES.getIdEstatus()}">
+										Servicios Dentales
+									</s:elseif> <s:elseif
+										test="%{#oservicio.idArea eq @mx.ipn.escom.spee.pagos.mapeo.CatalogoArea$AreaEnum@FOTOCOPIADO.getIdEstatus()}">
+										Servicios Fotocopiado
+									</s:elseif> <s:else>
+										Servicios Biblioteca
+									</s:else></td>
 								<td><a
 									href="${pageContext.request.contextPath}/pagos/cargar-pago/new?idServicio=${oservicio.clave}"
 									title="Adjuntar Archivo"> <i

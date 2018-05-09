@@ -15,6 +15,7 @@ import mx.ipn.escom.spee.action.Archivo;
 import mx.ipn.escom.spee.controlacceso.mapeo.Usuario;
 import mx.ipn.escom.spee.pagos.mapeo.Alumno;
 import mx.ipn.escom.spee.pagos.mapeo.ArchivoPagoDia;
+import mx.ipn.escom.spee.pagos.mapeo.CatalogoServicio;
 import mx.ipn.escom.spee.pagos.mapeo.EstadoPago.EstadoPagoEnum;
 import mx.ipn.escom.spee.util.bs.GenericBs;
 import mx.ipn.escom.spee.util.bs.GenericSearchBs;
@@ -36,11 +37,17 @@ public class PagoBs extends GenericBs<Modelo> implements Serializable {
 
 	@Transactional
 	public void registrarPago(Archivo archivo, Usuario usuario, Integer idServicio) {
+		
+		CatalogoServicio catalogoServicio = new CatalogoServicio();
+		catalogoServicio.setClave(idServicio.toString());
+		CatalogoServicio servicio = genericSearchBs.findByExample(catalogoServicio).get(0);
 		Date currentDate = new Date();
 		ArchivoPagoDia archivoPago = new  ArchivoPagoDia();
 		archivoPago.setIdUsuario(usuario.getId());
+		archivoPago.setIdCatalogoServicios(servicio.getId());
 		archivoPago.setIdEstado(EstadoPagoEnum.REVISION.getIdEstatus());
 		archivoPago.setFechaEnvio(currentDate);
+		archivoPago.setIdArea(servicio.getIdArea());
 		save(archivoPago);
 		LOGGER.info("se ha registrado un pago");
 	}

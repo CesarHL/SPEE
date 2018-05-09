@@ -25,20 +25,6 @@
 	</div>
 </div>
 
-<div class="text-left">
-	<div class="col-md-12">
-		<label class="control-label"><i
-			class="material-icons  md-24 md-sem-yellow ">&#xE061;</i></label> <label><s:text
-				name="Pagos Por Autorizar"></s:text></label>
-	</div>
-	<div class="col-md-12">
-		<label class="control-label"><i
-			class="material-icons  md-24 md-sem-rojo ">&#xE061;</i></label> <label><s:text
-				name="Pagos Rechazados"></s:text></label>
-	</div>
-</div>
-
-
 <div class="form-section form-horizontal">
 	<div class="form-group">
 		<div class="row">
@@ -83,10 +69,6 @@
 									href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos/idSel=${pagoPorAutorizar.id}"
 									title="Visualizar Comprobante"> <i
 										class="material-icons md-24 md-eld">${varIconoVisualizar}</i>
-								</a><a
-									href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos/new"
-									title="Adjuntar Comprobante Sigga"> <i
-										class="material-icons md-24 md-eld">${varIconoAdjuntar}</i>
 								</a></td>
 							</tr>
 						</s:iterator>
@@ -94,6 +76,19 @@
 				</table>
 			</div>
 		</div>
+	</div>
+</div>
+
+<div class="text-left">
+	<div class="col-md-12">
+		<label class="control-label"><i
+			class="material-icons  md-24 md-sem-yellow ">&#xE061;</i></label> <label><s:text
+				name="Pagos Por Autorizar"></s:text></label>
+	</div>
+	<div class="col-md-12">
+		<label class="control-label"><i
+			class="material-icons  md-24 md-sem-rojo ">&#xE061;</i></label> <label><s:text
+				name="Pagos Rechazados"></s:text></label>
 	</div>
 </div>
 	</html>

@@ -29,9 +29,9 @@ public class CatalogoArea implements Modelo, Serializable {
 
 		DENTALES(2, "Servicios Dentales"),
 
-		BIBLIOTECA(3, "Servicios Biblioteca"),
-
-		FOTOCOPIADO(3, "Servicios Fotocopiado");
+		FOTOCOPIADO(3, "Servicios Fotocopiado"),
+		
+		BIBLIOTECA(4, "Servicios Biblioteca");
 
 		private Integer idEstatus;
 

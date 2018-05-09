@@ -22,24 +22,20 @@
 <div class="form-section form-horizontal">
 	<div class="form-group">
 		<div class="row">
-			<div class="div-scroll">
-			
-			
-			</div>
+			<div class="div-scroll"></div>
 		</div>
 	</div>
 </div>
 <div class="text-right">
 	<a
 		href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos!autorizarPago?${idSel}"
-		class="btn btn-default btn-default-eld"><s:text
-			name="Autorizar" /></a> <a
+		class="btn btn-default btn-default-eld"><s:text name="Autorizar" /></a>
+	<a
 		href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos!rechazarPago?${idSel}"
-		class="btn btn-default btn-default-eld"><s:text
-			name="Rechazar" /></a> <a
-		href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos/"
-		class="btn btn-default btn-default-eld"><s:text
-			name="Regresar" /></a>
+		class="btn btn-default btn-default-eld"><s:text name="Rechazar" /></a><a
+		href="${pageContext.request.contextPath}/pagos/gestionar-autorizacion-pagos/show"
+		class="btn btn-default btn-default-eld"><s:text name="Regresar" />
+	</a>
 </div>
 
 	</html>
