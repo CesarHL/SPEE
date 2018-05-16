@@ -7,7 +7,6 @@
 
 <jsp:text>
 	<![CDATA[                 
-	<script type="text/javascript" src="${pageContext.request.contextPath}/pages/pagos/gestionar-autorizacion-pagos/js/index-show.js"></script>
 	]]>
 </jsp:text>
 
@@ -22,7 +21,13 @@
 <div class="form-section form-horizontal">
 	<div class="form-group">
 		<div class="row">
-			<div class="div-scroll"></div>
+			<object data="${pageContext.request.contextPath}/files/pago.pdf" type="application/pdf"
+				width="100%" height="100%">
+				<p>
+	
+				</p>
+			</object>
+
 		</div>
 	</div>
 </div>

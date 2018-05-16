@@ -34,14 +34,8 @@ public class LoginAct extends GeneralActionSupport {
 
 	private String usuarioAux;
 
-	/**
-	 * Login de acceso del usuario
-	 */
 	private String login;
 
-	/**
-	 * Password de acceso del usuario
-	 */
 	private String password;
 
 	private static final String BIENVENIDA_RESULT = "../control-acceso/gestionar-bienvenida";
@@ -59,17 +53,11 @@ public class LoginAct extends GeneralActionSupport {
 		try {
 			loginBs.ingresar(login, password);
 		} catch (UserNotFoundException e) {
-			addActionError(getText("MSG29"));
+			addActionError(getText("Usuario o Password icorrectos"));
 			LOGGER.error("Usuario no encontrado");
 		}
 	}
 
-	/**
-	 * Este metodo asigna el usuario (con perfil) dado y lo guarda en session de
-	 * acuerdo al ingresado en el login
-	 * 
-	 * @return
-	 */
 	public String create() {
 		Usuario usuario = (Usuario) SessionManager.get(NombreObjetosSesion.USUARIO_SESION);
 		if (PerfilUsuarioEnum.SUBDIRECTOR.getValor().equals(usuario.getId())) {

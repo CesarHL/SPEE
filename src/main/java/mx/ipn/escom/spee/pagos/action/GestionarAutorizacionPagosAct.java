@@ -60,7 +60,7 @@ public class GestionarAutorizacionPagosAct extends GeneralActionSupport {
 	public String autorizarPago() {
 		getIdSel();
 		pagoBs.autorizarPago(idSel);
-		addActionMessage("Se ha autorizado el pago");
+		addActionMessage(getText("Se ha autorizado el pago"));
 		return SUCCESS;
 	}
 

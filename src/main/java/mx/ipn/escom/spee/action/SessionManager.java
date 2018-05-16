@@ -15,6 +15,11 @@ public class SessionManager {
 		return ActionContext.getContext().getSession().get(nombre);
 	}
 
+	
+	public static Object put(String nombre, Object o) {
+		return ActionContext.getContext().getSession().put(nombre, o);
+	}
+	
 	/**
 	 * M??todo proxy que sube un objeto a la sesi??n con culla llave se
 	 * especifica en nombre

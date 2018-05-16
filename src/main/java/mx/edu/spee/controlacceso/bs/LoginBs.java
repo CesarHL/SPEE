@@ -23,9 +23,6 @@ import mx.ipn.escom.spee.util.bs.GenericBs;
 @Scope(value = BeanDefinition.SCOPE_SINGLETON)
 public class LoginBs {
 
-	/**
-	 * Log de la clase
-	 */
 	private static final Logger LOGGER = LoggerFactory.getLogger(GenericBs.class);
 
 	/*
@@ -43,12 +40,6 @@ public class LoginBs {
 	 */
 	private List<Cuenta> listaCuentas;
 
-	/**
-	 * LLena en codigo duro los periles que se encuentran en el catalogo de la tabla
-	 * tau01_perfil
-	 * 
-	 * @return
-	 */
 	public List<Perfil> llenarPerfiles() {
 		List<Perfil> listaPerfiles = new ArrayList<>();
 		listaPerfiles.add(new Perfil(1, "Subdirector", "Subdirector", "SA", true));
@@ -64,12 +55,6 @@ public class LoginBs {
 		return listaPerfiles;
 	}
 
-	/**
-	 * LLena en codigo duro los perfiles que se encuentran en el catalogo de la
-	 * tabla tau02_usuario
-	 * 
-	 * @return
-	 */
 	public List<Usuario> llenarUsuarios() {
 		List<Usuario> listaUsuarios = new ArrayList<>();
 		listaUsuarios.add(new Usuario(1, "subdirector_administrativo@ipn.com.mx", "pasword"));
@@ -85,12 +70,6 @@ public class LoginBs {
 		return listaUsuarios;
 	}
 
-	/**
-	 * Llena en codigo duro las cuentas que se encuentran en el catalogo de la tabla
-	 * tau03_cuenta
-	 * 
-	 * @return
-	 */
 	public List<Cuenta> llenarCuentas() {
 		List<Cuenta> listaCuentas = new ArrayList<>();
 		listaCuentas.add(new Cuenta(1, 1, 1, new Date(), new Date()));
@@ -106,15 +85,7 @@ public class LoginBs {
 		return listaCuentas;
 	}
 
-	/**
-	 * Brinda acceso a un usuario con base en su usuario. El login da como entrada
-	 * el correo registrado a cierto tipo de usuario, este metodo pone en session el
-	 * usuario dado, junto con el prefil correspondiente
-	 * 
-	 * @param login
-	 * @param password
-	 * @throws UserNotFoundException
-	 */
+
 	@Transactional
 	public void ingresar(String login, String password) throws UserNotFoundException {
 		setListaUsuarios(llenarUsuarios());

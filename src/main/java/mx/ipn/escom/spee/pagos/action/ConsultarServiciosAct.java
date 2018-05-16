@@ -4,16 +4,25 @@ import java.util.List;
 
 import org.apache.struts2.convention.annotation.AllowedMethods;
 import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.Results;
+import org.apache.struts2.interceptor.validation.SkipValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.opensymphony.xwork2.ActionSupport;
+
 import mx.ipn.escom.spee.action.GeneralActionSupport;
+import mx.ipn.escom.spee.action.NombreObjetosSesion;
+import mx.ipn.escom.spee.action.SessionManager;
 import mx.ipn.escom.spee.pagos.bs.CatalogoServiciosBs;
 import mx.ipn.escom.spee.pagos.mapeo.CatalogoServicio;
 import mx.ipn.escom.spee.util.bs.GenericSearchBs;
+import mx.ipn.escom.spee.util.mapeo.AjaxResult;
 
 @Namespace("/pagos")
-@AllowedMethods({ "visualizarServiciosCelex", "visualizarServiciosDentales", "visualizarServiciosFotocopiado",
-		"visualizarServiciosBiblioteca" })
+@Results({
+		@Result(name = "jsonTest", type = "json", params = { "root", "action", "includeProperties", "ajaxResult.*" }) })
+@AllowedMethods({ "jsonTest" })
 public class ConsultarServiciosAct extends GeneralActionSupport {
 
 	/**
@@ -23,31 +32,33 @@ public class ConsultarServiciosAct extends GeneralActionSupport {
 
 	@Autowired
 	private CatalogoServiciosBs catalogoServiciosBs;
-	
+
 	@Autowired
 	private GenericSearchBs genericSearchBs;
 
 	private List<CatalogoServicio> listCatalogoServicios;
+
+	private AjaxResult ajaxResult;
 
 	public String index() {
 		listCatalogoServicios = genericSearchBs.findAll(CatalogoServicio.class);
 		return INDEX;
 	}
 
-	public String visualizarServiciosCelex() {
-		return "visualizarServiciosCelex";
+	@SkipValidation
+	public String jsonTest() {
+		getAjaxResult();
+		ajaxResult = obtenerArchivos();
+		SessionManager.put(NombreObjetosSesion.AJAX_RESULT, ajaxResult);
+		return "jsonTest";
 	}
 
-	public String visualizarServiciosDentales() {
-		return "visualizarServiciosDentales";
-	}
+	public AjaxResult obtenerArchivos() {
+		AjaxResult ajaxResult = new AjaxResult();
+		ajaxResult.addCampo("pagos",
+				 genericSearchBs.findAll(CatalogoServicio.class));
 
-	public String visualizarServiciosFotocopiado() {
-		return "visualizarServiciosFotocopiado";
-	}
-
-	public String visualizarServiciosBiblioteca() {
-		return "visualizarServiciosBiblioteca";
+		return ajaxResult;
 	}
 
 	public CatalogoServiciosBs getCatalogoServiciosBs() {
@@ -73,7 +84,22 @@ public class ConsultarServiciosAct extends GeneralActionSupport {
 	public void setGenericSearchBs(GenericSearchBs genericSearchBs) {
 		this.genericSearchBs = genericSearchBs;
 	}
-	
-	
+
+	public AjaxResult getAjaxResult() {
+		this.ajaxResult = (AjaxResult) SessionManager.get(NombreObjetosSesion.AJAX_RESULT);
+		if (ajaxResult == null) {
+			ajaxResult = new AjaxResult();
+			SessionManager.put(NombreObjetosSesion.AJAX_RESULT, ajaxResult);
+		}
+		return ajaxResult;
+	}
+
+	/**
+	 * @param ajaxResult
+	 *            the ajaxResult to set
+	 */
+	public void setAjaxResult(AjaxResult ajaxResult) {
+		this.ajaxResult = ajaxResult;
+	}
 
 }

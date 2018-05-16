@@ -35,22 +35,18 @@
 							<th><s:text name="Fecha" /></th>
 							<th><s:text name="Concepto" /></th>
 							<th><s:text name="Cantidad" /></th>
-							<th><s:text name="Acciones" /></th>
 						</tr>
 					</thead>
 					<tbody>
 						<s:iterator value="listPagos" var="pagAutorizadoCelex">
 						<s:set var="alumno" value="%{pagoBs.obtenerAlumno(#pagAutorizadoCelex.idUsuario)}"></s:set>
 							<tr>
-								<td>${alumno }</td>
+								<td>${alumno}</td>
 								<td>${alumno.curp }</td>
 								<td>${alumno.boleta }</td>
 								<td><s:date name="%{#pagAutorizadoCelex.fechaEnvio}" format="yyyy-MM-dd"/> </td>
 								<td>${pagAutorizadoCelex.catalogoServicio.servicio}</td>
 								<td>$ ${pagAutorizadoCelex.catalogoServicio.monto} MXN</td>
-								<td><a href="#" title="Visualizar Pago"> <i
-										class="material-icons md-24 md-eld">${varIconoVisualizar}</i>
-								</a></td>
 							</tr>
 						</s:iterator>
 					</tbody>

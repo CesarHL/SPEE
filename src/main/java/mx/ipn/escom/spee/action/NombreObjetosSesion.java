@@ -31,6 +31,8 @@ public class NombreObjetosSesion {
 	public static final String ADDRESSPROCED = "address-proced";
 	public static final String CLIENT = "activate-client";
 	public static final String TIPO_DIRECCION = "tipo-direccion";
+	
+	public static final String AJAX_RESULT = "ajax-result";
 
 	public static final String GRUPO = "grupo-cliente";
 

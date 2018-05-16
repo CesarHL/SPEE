@@ -66,7 +66,6 @@ public class Usuario implements Modelo, Serializable {
 	@Transient
 	private Perfil PerfilActivo;
 
-
 	/**
 	 * Constructor por defecto de un usuario
 	 */
@@ -109,12 +108,7 @@ public class Usuario implements Modelo, Serializable {
 		this.password = password;
 	}
 
-	/**
-	 * @return the login @TODO Verificar cómo trabajar con validación de Login
-	 *         para cuando se quiera hacer un update de las clases a las que
-	 *         hereda.
-	 */
-	@Validations(requiredStrings = { @RequiredStringValidator(message = "${getText('MSG26')}") }, emails = {
+	@Validations(requiredStrings = { @RequiredStringValidator(message = "Campo Obligatorio") }, emails = {
 			@EmailValidator(type = ValidatorType.FIELD, message = "%{getText('MSG27')}") }, stringLengthFields = {
 					@StringLengthFieldValidator(maxLength = "50", message = "%{getText('MSG57', {getText('CO_MENOR'), '50', 'caracteres'})}", trim = true, type = ValidatorType.FIELD) })
 	public String getLogin() {
@@ -144,6 +138,8 @@ public class Usuario implements Modelo, Serializable {
 		this.login = login;
 	}
 
+	@Validations(requiredStrings = { @RequiredStringValidator(message = "Campo Obligatorio") }, stringLengthFields = {
+			@StringLengthFieldValidator(maxLength = "10", message = "Debe ser menor que 10 caracteres", trim = true, type = ValidatorType.FIELD) })
 	public String getPassword() {
 		return password;
 	}
@@ -167,7 +163,6 @@ public class Usuario implements Modelo, Serializable {
 	public void setConfirmPassword(String confirmPassword) {
 		this.confirmPassword = confirmPassword;
 	}
-
 
 	/**
 	 * @return the perfilActivo

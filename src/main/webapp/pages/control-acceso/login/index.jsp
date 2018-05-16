@@ -46,7 +46,7 @@
 						name="CU4_LBL2" /></label>
 				<div class="col-xs-12 col-sm-8 col-md-8 ">
 					<s:password cssClass="form-control campo" name="password"
-						cssClassError="input-error" id="txUsuario" />
+						cssClassError="input-error" id="txUsuario" maxlength="10" required="true" />
 					<s:fielderror fieldName="password" cssClass="error"
 						theme="%{#varTheme}" />
 				</div>
